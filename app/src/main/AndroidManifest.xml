@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.turistas">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Žemaitijos gidas"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Restoranai"
+            android:label="Restoranai"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Lanktyvtinos_vietos"
+            android:label="Lankytinos vietos"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Nakvynes"
+            android:label="Nakvynes"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Linksmybes"
+            android:label="Pramogos"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MazeikiuRestoranai"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".Restoranai" />
+        <activity
+            android:name=".TelsiuRestoranai"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".Restoranai" />
+        <activity
+            android:name=".pekinas"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".arkos"
+            android:label="Restoranai Mažeikiuose"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".Haochi"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".Laisves30"
+            android:label="Restoranai Mažeikiuose"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".Roala"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".Rosso"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".Gama"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".Picasso"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".Cancan"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".Charlie"
+            android:label="Restoranai Mažeikiuose"
+            android:parentActivityName=".MazeikiuRestoranai" />
+        <activity
+            android:name=".dziugonamai"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".teatrokavine"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".tela"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".jancauskienes"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".guesthouse"
+            android:label="Restoranai Telšiuose"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".oldquart"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".sanchajus"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".jonziedis"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".lisiteja"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".antkalno"
+            android:label="Restoranai Telšiuose"
+            android:parentActivityName=".TelsiuRestoranai" />
+        <activity
+            android:name=".SiauliuRestoranai"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".Restoranai" />
+        <activity
+            android:name=".Sbaras"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".TasteStudy"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".sodzius"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".Black_Bar"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".siauliuarkos"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".donvino"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".juone_pastuoge"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".my_thai"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".can_can"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".blic_bar"
+            android:label="Restoranai Šiauliuose"
+            android:parentActivityName=".SiauliuRestoranai" />
+        <activity
+            android:name=".saukstelis"
+            android:label="Restoranai Tauragėje"
+            android:parentActivityName=".TauragesRestoranai" />
+        <activity
+            android:name=".starrpizza"
+            android:label="Restoranai Tauragėje"
+            android:parentActivityName=".TauragesRestoranai" />
+        <activity
+            android:name=".skoniodziazas"
+            android:label="Restoranai Tauragėje"
+            android:parentActivityName=".TauragesRestoranai" />
+        <activity
+            android:name=".elgreco"
+            android:label="Restoranai Tauragėje"
+            android:parentActivityName=".TauragesRestoranai" />
+        <activity
+            android:name=".hesburger"
+            android:label="Restoranai Tauragėje"
+            android:parentActivityName=".TauragesRestoranai" />
+        <activity
+            android:name=".TauragesRestoranai"
+            android:label="Restoranai Tauragėje"
+            android:parentActivityName=".Restoranai" />
+        <activity
+            android:name=".PlungesRestoranai"
+            android:label="Restoranai Plungėje"
+            android:parentActivityName=".Restoranai" />
+        <activity
+            android:name=".virginijauspicerija"
+            android:label="Restoranai Plungėje"
+            android:parentActivityName=".PlungesRestoranai" />
+        <activity
+            android:name=".stonkusodyba"
+            android:label="Restoranai Plungėje"
+            android:parentActivityName=".PlungesRestoranai" />
+        <activity
+            android:name=".grilbar"
+            android:label="Restoranai Plungėje"
+            android:parentActivityName=".PlungesRestoranai" />
+        <activity
+            android:name=".KretingosRestoranai"
+            android:label="Restoranai Kretingoje"
+            android:parentActivityName=".Restoranai" />
+        <activity
+            android:name=".vienaragiomalunas"
+            android:label="Restoranai Kretingoje"
+            android:parentActivityName=".KretingosRestoranai" />
+        <activity
+            android:name=".pasgrafa"
+            android:label="Restoranai Kretingoje"
+            android:parentActivityName=".KretingosRestoranai" />
+        <activity
+            android:name=".smagratis"
+            android:label="Restoranai Kretingoje"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".KretingosRestoranai" />
+        <activity
+            android:name=".SkuodoRestoranai"
+            android:label="Restoranai Skuode"
+            android:parentActivityName=".Restoranai" />
+        <activity
+            android:name=".pasneriju"
+            android:label="Restoranai Skuode"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".SkuodoRestoranai" />
+        <activity
+            android:name=".vespera"
+            android:label="Restoranai Skuode"
+            android:parentActivityName=".SkuodoRestoranai" />
+        <activity
+            android:name=".MazeikiuNakvynes"
+            android:label="Nakvynė Mažeikiuose"
+            android:parentActivityName=".Nakvynes" />
+        <activity
+            android:name=".TelsiuNakvynes"
+            android:label="Nakvynė Telšiuose"
+            android:parentActivityName=".Nakvynes" />
+        <activity
+            android:name=".SiauliuNakvynes"
+            android:label="Nakvynė Šiauliuose"
+            android:parentActivityName=".Nakvynes" />
+        <activity
+            android:name=".TauragesNakvynes"
+            android:label="Nakvynė Tauragėje"
+            android:parentActivityName=".Nakvynes" />
+        <activity
+            android:name=".PlungesNakvynes"
+            android:label="Nakvynė Plungėje"
+            android:parentActivityName=".Nakvynes" />
+        <activity
+            android:name=".KretingosNakvynes"
+            android:label="Nakvynė Kretingoje"
+            android:parentActivityName=".Nakvynes" />
+        <activity
+            android:name=".SkuodoNakvynes"
+            android:label="Nakvynė Skuode"
+            android:parentActivityName=".Nakvynes" />
+        <activity
+            android:name=".synet"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Nakvynė Mažeikiuose"
+            android:parentActivityName=".MazeikiuNakvynes" />
+        <activity
+            android:name=".dziugokalnas"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Nakvynė Telšiuose"
+            android:parentActivityName=".TelsiuNakvynes" />
+        <activity
+            android:name=".meskosguolis"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Nakvynė Telšiuose"
+            android:parentActivityName=".TelsiuNakvynes" />
+        <activity
+            android:name=".viesbutistelsiai"
+            android:label="Nakvynė Telšiuose"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".TelsiuNakvynes" />
+        <activity
+            android:name=".passtefa"
+            android:label="Nakvynė Telšiuose"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".TelsiuNakvynes" />
+        <activity
+            android:name=".hotelsiauliai"
+            android:label="Nakvynė Šiauliuose"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".SiauliuNakvynes" />
+        <activity
+            android:name=".turne"
+            android:label="Nakvynė Šiauliuose"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".SiauliuNakvynes" />
+        <activity
+            android:name=".grafaite"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Nakvynė Šiauliuose"
+            android:parentActivityName=".SiauliuNakvynes" />
+        <activity
+            android:name=".siauresvartai"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Nakvynė Šiauliuose"
+            android:parentActivityName=".SiauliuNakvynes" />
+        <activity
+            android:name=".zubovo"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Nakvynė Šiauliuose"
+            android:parentActivityName=".SiauliuNakvynes" />
+        <activity
+            android:name=".tauragesviesbutis"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Nakvynė Tauragėje"
+            android:parentActivityName=".TauragesNakvynes" />
+        <activity
+            android:name=".vytautobamso"
+            android:label="Nakvynė Tauragėje"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".TauragesNakvynes" />
+        <activity
+            android:name=".globepark"
+            android:label="Nakvynė Tauragėje"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".TauragesNakvynes" />
+        <activity
+            android:name=".ngapartments"
+            android:label="Nakvynė Plungėje"
+            android:parentActivityName=".PlungesNakvynes"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity
+            android:name=".kristapartments"
+            android:label="Nakvynė Plungėje"
+            android:parentActivityName=".PlungesNakvynes"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+        <activity
+            android:name=".hotelporto"
+            android:label="Nakvynė Plungėje"
+            android:parentActivityName=".PlungesNakvynes"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity
+            android:name=".vikgreta"
+            android:label="Nakvynė Kretingoje"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".KretingosNakvynes" />
+        <activity
+            android:name=".airovita"
+            android:label="Nakvynė Kretingoje"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".KretingosNakvynes" />
+        <activity
+            android:name=".aroma"
+            android:label="Nakvynė Skuode"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".SkuodoNakvynes" />
+        <activity
+            android:name=".MazeikiuLinksmybes"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".Linksmybes" />
+        <activity
+            android:name=".boulingas"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".wake"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".bildukas"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".paintball"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".ledoarena"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".parachute"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".movie"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".zirgas"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".plaukimas"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".TelsiuLinksmybes"
+            android:label="Pramogos Telšiuose"
+            android:parentActivityName=".Linksmybes" />
+        <activity
+            android:name=".tenis"
+            android:label="Pramogos Mažeikiuose"
+            android:parentActivityName=".MazeikiuLinksmybes" />
+        <activity
+            android:name=".tklubai"
+            android:label="Pramogos Telšiuose"
+            android:parentActivityName=".TelsiuLinksmybes" />
+        <activity
+            android:name=".tboulingas"
+            android:label="Pramogos Telšiuose"
+            android:parentActivityName=".TelsiuLinksmybes" />
+        <activity
+            android:name=".aerodromas"
+            android:label="Pramogos Telšiuose"
+            android:parentActivityName=".TelsiuLinksmybes" />
+        <activity
+            android:name=".tkinoteatras"
+            android:label="Pramogos Telšiuose"
+            android:parentActivityName=".TelsiuLinksmybes" />
+        <activity
+            android:name=".tzirgas"
+            android:label="Pramogos Telšiuose"
+            android:parentActivityName=".TelsiuLinksmybes" />
+        <activity
+            android:name=".tbaseinai"
+            android:label="Pramogos Telšiuose"
+            android:parentActivityName=".TelsiuLinksmybes" />
+        <activity
+            android:name=".SiauliuLinksmybes"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".Linksmybes" />
+        <activity
+            android:name=".sklubai"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".sboulingas"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".swake"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".sdazasvydis"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".sledoarena"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".saerodromas"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".skinas"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".szirgas"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".splaukimas"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".stenis"
+            android:label="Pramogos Šiauliuose"
+            android:parentActivityName=".SiauliuLinksmybes" />
+        <activity
+            android:name=".TauragesLinksmybes"
+            android:label="Pramogos Tauragėje"
+            android:parentActivityName=".Linksmybes" />
+        <activity
+            android:name=".tauklubai"
+            android:label="Pramogos Tauragėje"
+            android:parentActivityName=".TauragesLinksmybes" />
+        <activity
+            android:name=".tauboulingas"
+            android:label="Pramogos Tauragėje"
+            android:parentActivityName=".TauragesLinksmybes" />
+        <activity
+            android:name=".tauwake"
+            android:label="Pramogos Tauragėje"
+            android:parentActivityName=".TauragesLinksmybes" />
+        <activity
+            android:name=".taudazasvydis"
+            android:label="Pramogos Tauragėje"
+            android:parentActivityName=".TauragesLinksmybes" />
+        <activity
+            android:name=".tauaerodromas"
+            android:label="Pramogos Tauragėje"
+            android:parentActivityName=".TauragesLinksmybes" />
+        <activity
+            android:name=".tautenis"
+            android:label="Pramogos Tauragėje"
+            android:parentActivityName=".TauragesLinksmybes" />
+        <activity
+            android:name=".PlungesLinksmybes"
+            android:label="Pramogos Plungėje"
+            android:parentActivityName=".Linksmybes" />
+        <activity
+            android:name=".pklubai"
+            android:label="Pramogos Plungėje"
+            android:parentActivityName=".PlungesLinksmybes" />
+        <activity
+            android:name=".pboulingas"
+            android:label="Pramogos Plungėje"
+            android:parentActivityName=".PlungesLinksmybes" />
+        <activity
+            android:name=".pzirgas"
+            android:label="Pramogos Plungėje"
+            android:parentActivityName=".PlungesLinksmybes" />
+        <activity
+            android:name=".pplaukimas"
+            android:label="Pramogos Plungėje"
+            android:parentActivityName=".PlungesLinksmybes" />
+        <activity
+            android:name=".ptenis"
+            android:label="Pramogos Plungėje"
+            android:parentActivityName=".PlungesLinksmybes" />
+        <activity
+            android:name=".KretingosLinksmybes"
+            android:label="Pramogos Kretingoje"
+            android:parentActivityName=".Linksmybes" />
+        <activity
+            android:name=".kpaintball"
+            android:label="Pramogos Kretingoje"
+            android:parentActivityName=".KretingosLinksmybes" />
+        <activity
+            android:name=".kparachute"
+            android:label="Pramogos Kretingoje"
+            android:parentActivityName=".KretingosLinksmybes" />
+        <activity
+            android:name=".kzirgas"
+            android:label="Pramogos Kretingoje"
+            android:parentActivityName=".KretingosLinksmybes" />
+        <activity
+            android:name=".SkuodoLinksmybes"
+            android:label="Pramogos Skuode"
+            android:parentActivityName=".Linksmybes" />
+        <activity
+            android:name=".skuodklubai"
+            android:label="Pramogos Skuode"
+            android:parentActivityName=".SkuodoLinksmybes" />
+        <activity
+            android:name=".spaintball"
+            android:label="Pramogos Skuode"
+            android:parentActivityName=".SkuodoLinksmybes" />
+        <activity
+            android:name=".skuodplaukimas"
+            android:label="Pramogos Skuode"
+            android:parentActivityName=".SkuodoLinksmybes" />
+        <activity
+            android:name=".zgidas"
+            android:label="Apie Žemaitija"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".lankytinos_vietosgalerry"
+            android:label="Lankytinos vietos"
+            android:parentActivityName=".Lanktyvtinos_vietos" />
+        <activity
+            android:name=".marsrutai"
+            android:label="Maršrutai Žemaitijoje"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".marsrutaugaleru"
+            android:label="Maršrutai Žemaitijoje"
+            android:parentActivityName=".marsrutai" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.turistas.MainActivity"
+                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+                android:label=""
+                android:parentActivityName=".MainActivity"
+                />
+        <activity android:name=".apptut"
+            android:parentActivityName=".MainActivity"
+            android:label="Kaip naudotis"/>
+        <activity android:name=".apieapp"
+            android:parentActivityName=".MainActivity"
+            android:label=""/>
+    </application>
+
+</manifest>

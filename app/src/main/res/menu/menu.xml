@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/info"
+        android:icon="@drawable/info"
+        android:title="Kaip Naudotis?"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/settings"
+        android:title="Apie aplikaciją"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/kaip"
+        android:title="Kaip naudotis?"
+        app:showAsAction="never"/>
+</menu>

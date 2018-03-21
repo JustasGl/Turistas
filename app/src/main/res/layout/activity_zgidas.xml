@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.turistas.zgidas"
+    android:orientation="vertical">
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Žemaitija"
+        android:textSize="50sp"
+        android:textAlignment="center"/>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:text="Žemaitija (anksčiau tiesiog Žemaičiai, žem. Žemaitėjė) yra vienas iš Lietuvos etnokultūrinių regionų, taip pat geografinis ir istorinis regionas (ist. vok. Samaiten, lot. Samogitia). Pirmas paminėjimas – 1219 m., kur minimi du žemaičių kunigaikščiai dalyvavę taikos sudaryme tarp Lietuvos ir Voluinės-Galicijos kunigaikštysčių 1215 m. Žemaitijos etnografinis regionas pagal 2003 m. Etninės kultūros globos tarybos patvirtintą žemėlapį[1] apima 15 774 km² plotą.
+
+Žemaitijos etninio regiono sostine laikomi Telšiai, nors istoriškai Žemaičių žemės centras visad buvęs Medininkų žemėje, Medininkuose (dabartiniai Varniai). Būtent Medininkų žemė buvo nuolatinis kryžiuočių taikinys – į ten vedė daugelis jų žygių, kai buvo puolami žemaičiai.
+Medininkuose 1417 m. buvo įkurta ir Žemaičių vyskupija. Kiti svarbūs Žemaitijos centrai buvo Raseiniai, Kražiai ir Šiauliai: šiuose miestuose rinkdavosi Žemaitijos seniūnijos seimeliai.
+1441 m. Žemaitija tapo autonomiška LDK sudėtyje. Tais pačiais metais Žemaitijai buvo suteiktas oficialus kunigaikštystės statusas ir ji buvo įtraukta į LDK, o vėliau ir į ATR valdovų titulus."/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/skyriklis"/>
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Herbas"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/skyriklis"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/herbas"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/skyriklis"/>
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pavadinimas"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="16dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/skyriklis"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Tradiciškai, Žemaitijos pavadinimas kildinamas iš lietuvių kalbos žodžio žemas. Pasak daugelio istorikų, Žemaitijos pavadinimas galėjo būti vartojamas kalbant apie žemę esančia už Nemuno ribų. Kita hipotezė teigia, jog jis kilęs iš lietuvių kalbos žodžio žemė, tačiau ji nėra labai populari. Viduramžiais, Žemaitija lotyniškai buvo žinoma bei užrašoma kaip Samaitiæ, Zamaitiae, Zamaytae, Samathae, Samethi; rusėnų šaltiniai mini regioną kaip жемотьская земля (liet. Žemaitijos žemė); iš jo kilo ir lenkiškas regiono pavadinimas Żmudź ir, tikriausiai, vidurio vokiečių aukštaičių Sameiten, Samaythen. Tai nusako senesnę Žemaitijos pavadinimo formą, Žemaičiai. Patys žemaičiai Žemaitiją vadina Žemaitėjė."/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/skyriklis"/>
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Svarbiausios gyvenvietės"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="8dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/skyriklis"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="
+    Kražiai – Žemaičių seniūnijos ir Žemaičių kunigaikštystės administracinis centras XV–XVI a.,
+
+    Raseiniai – 11 203 gyv., Žemaičių kunigaikštystės administracinis centras nuo XVI a. 7 dešimtmečio iki kunigaikštystės panaikinimo (1795 m.), taip pat Pietų Žemaitijos etnokultūrinio paregionio centras,
+
+    Telšiai – 24 295 gyv., Žemaitijos etnokultūrinio regiono centras, apskrities centras,
+
+    Šiauliai – 105 610 gyv., apskrities centras,
+
+    Mažeikiai – 35 997 gyv., svarbus naftos perdirbimo pramonės centras,
+
+    Tauragė – 23 513 gyv., apskrities centras,
+
+    Plungė – 20 041 gyv.
+
+    Kretinga – 19 101 gyv.
+
+    Palanga – 15 732 gyv.
+
+    Jurbarkas – 11 232 gyv.
+
+    Naujoji Akmenė  – 9 300 gyv.
+
+    Skuodas – 6 513 gyv., rajono savivaldybės centras. Aktyvus Žemaitijos kultūros centras: žemaičių teatro veikla, žemaitiškų knygų leidyba. Savivaldybės posėdžių metu kalbama žemaitiškai.
+
+    Šilalė – 5 492 gyv.
+
+    Rietavas – 3 824 gyv., savivaldybės centras
+"/>
+    <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/skyriklis"/>
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Šaltinis"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="8dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/skyriklis"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wiki"
+        android:id="@+id/wikiped"
+        android:foreground="?attr/selectableItemBackground"/>
+</LinearLayout>
+    </ScrollView>

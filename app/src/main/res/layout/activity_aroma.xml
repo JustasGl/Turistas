@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.android.turistas.aroma"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skuodiškio užeiga"
+            android:textSize="60sp"
+            android:textAlignment="center"/>
+        <View
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyriklis"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vos už 80 metrų nuo Skuodo autobusų stoties įsikūrusiuose nakvynės namuose „Aroma Skuodiškio užeiga“ nuomojami dviračiai ir auga sodas, kuriame pastatytos kepsninės.
+\n \nKlasikinio stiliaus „Aroma“ numeriuose yra kabelinius kanalus rodantys plokščiaekraniai televizoriai, elektriniai virduliai ir vonios kambariai, kuriuose rasite rankšluosčius bei dušus arba vonias. Nakvynės namuose veikia nemokamas belaidis internetas.
+\n \nPageidaujantiems svečiams už papildomą mokestį teikiamos pervežimo paslaugos, o registratūra dirba visą parą. Viešnagės metu galėsite atsipalaiduoti sode ir apsilankyti restorane, kuriame ruošiami lietuviški bei europietiški valgiai. Automobilių stovėjimo aikštelė – nemokama. "
+            android:textSize="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/juoda"/>
+        <View
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyriklis"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kontaktai"
+            android:textSize="32dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Tel. nr. (8-655) 58890"
+                android:textSize="16dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/juoda"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Adresas: Vilniaus g. 21, Skuodas 98111"
+                android:textSize="16dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/juoda"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <View
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyriklis"
+            android:layout_marginBottom="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/telnr"
+                android:layout_weight="1"
+                android:id="@+id/telefono"
+                android:background="?attr/selectableItemBackground"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/skyriklis"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/adresas"
+                android:layout_weight="1"
+                android:id="@+id/adreso"
+                android:background="?attr/selectableItemBackground"/>
+        </LinearLayout>
+        <View
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyriklis" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:layout_alignParentTop="true" />
+            <LinearLayout
+                android:id="@+id/SliderDots"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"/>
+        </RelativeLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground">
+            <ImageView
+                android:id="@+id/google"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:background="#ed5564"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gsearch"
+                android:foreground="?attr/selectableItemBackground"/>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>
