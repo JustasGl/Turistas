@@ -12,13 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TauragesRestoranai_fragmentas extends Fragment {
 
 
@@ -30,42 +26,41 @@ public class TauragesRestoranai_fragmentas extends Fragment {
     public static final String SAUKSTELIS = "Saukstelis";
     public static final String UŽSUKITE_TAURAGĖJE = "Užsukite Tauragėje";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    public TauragesRestoranai_fragmentas() {
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(getActivity(), R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
     }
 
-    public TauragesRestoranai_fragmentas() {
-        // Required empty public constructor
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.word_list, container,false);
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        Toolbar myToolbar = (Toolbar)rootView.findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) rootView.findViewById(R.id.my_toolbar);
         myToolbar.setVisibility(View.GONE);
 
         final ArrayList<word> Taurestoranai = new ArrayList<word>();
@@ -78,7 +73,7 @@ public class TauragesRestoranai_fragmentas extends Fragment {
         Taurestoranai.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(getActivity(), Taurestoranai);
-        ListView Listtranslated = (ListView)rootView.findViewById(R.id.list);
+        ListView Listtranslated = (ListView) rootView.findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -86,35 +81,35 @@ public class TauragesRestoranai_fragmentas extends Fragment {
 
                 word listas = Taurestoranai.get(position);
 
-                switch (position){
+                switch (position) {
                     case 1:
-                        skamb ();
+                        skamb();
                         Intent intent = new Intent(getActivity(), saukstelis.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        skamb ();
+                        skamb();
                         Intent intentas = new Intent(getActivity(), starrpizza.class);
                         startActivity(intentas);
                         break;
                     case 3:
-                        skamb ();
+                        skamb();
                         Intent intentas1 = new Intent(getActivity(), skoniodziazas.class);
                         startActivity(intentas1);
                         break;
                     case 4:
-                        skamb ();
+                        skamb();
                         Intent intentas2 = new Intent(getActivity(), elgreco.class);
                         startActivity(intentas2);
                         break;
                     case 5:
-                        skamb ();
+                        skamb();
                         Intent intentas3 = new Intent(getActivity(), hesburger.class);
                         startActivity(intentas3);
                         break;
 
                     case 6:
-                        skamb ();
+                        skamb();
                         String daugiau = HTTPS_WWW_GOOGLE_LT_SEARCH_RLZ_1_C1_CHBF_EN_LT747_LT747_EI_4C_X8_WERQ_CKXG6_AS1_JJW_BA_Q_RESTORANAI_TAURAG_C4_97JE_OQ_RESTORANAI_TAURAG_C4_97JE_GS_L_PSY_AB_3_0I22I30K1_148820_151268_0_151811_9_9_0_0_0_0_71_572_9_9_0_0_1_1_64_PSY_AB_0_9_569_0J35I39K1J0I20I263K1J0I22I10I30K1_0_I0K_VLV7VU0C;
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                         startActivity(i);

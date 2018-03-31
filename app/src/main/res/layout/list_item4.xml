@@ -1,120 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.turistas.marsrutaugaleru"
+    android:background="#172029"
     android:orientation="vertical"
-    android:background="#172029">
+    tools:context="com.example.android.turistas.marsrutaugaleru">
+
     <TextView
+        android:id="@+id/pavadinimas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Pavadinimas"
-        android:textSize="32dp"
-        android:id="@+id/pavadinimas"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="?attr/actionBarSize"
         android:textAlignment="center"
         android:textColor="#d0ffffff"
-        android:layout_marginBottom="4dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="?attr/actionBarSize"
-        />
+        android:textSize="32dp"
+        tools:text="Pavadinimas" />
+
     <TextView
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Keliones pradzia prasideda cia: "
         android:id="@+id/aprasymas"
-        android:textColor="#d0ffffff"
-        />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="360dp">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/isvykstameimg"
-        tools:src="@drawable/mzksq"
-        android:scaleType="centerCrop"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Kelion4s pradzia: aprasymas n tt"
-            android:textColor="#d0ffffff"
-            android:padding="8dp"
-            android:background="#4b000000"
-            android:id="@+id/text1"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" />
-</RelativeLayout>
-    <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="360dp">
-    <ImageView
-        android:id="@+id/midpic"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/road"
-        android:scaleType="centerCrop"
-        />
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Kelion4s pradzia: aprasymas n tt"
-        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
         android:textColor="#d0ffffff"
-        android:padding="8dp"
-        android:layout_centerVertical="true"
-        android:background="#4b000000"
-        android:id="@+id/text2"
-        />
-</RelativeLayout>
+        tools:text="Keliones pradzia prasideda cia: " />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="360dp">
+
         <ImageView
+            android:id="@+id/isvykstameimg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/ft2"
-            tools:src="@drawable/bildukas"
-            android:scaleType="centerCrop"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:scaleType="centerCrop"
+            tools:src="@drawable/mzksq" />
+
         <TextView
+            android:id="@+id/text1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Kelion4s pradzia: aprasymas n tt"
             android:layout_alignParentBottom="true"
-            android:textColor="#d0ffffff"
+            android:layout_alignParentStart="true"
+            android:background="#4b000000"
             android:padding="8dp"
+            android:textColor="#d0ffffff"
+            tools:text="Kelion4s pradzia: aprasymas n tt" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp">
+
+        <ImageView
+            android:id="@+id/midpic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/road" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_centerVertical="true"
             android:background="#4b000000"
+            android:padding="8dp"
+            android:textColor="#d0ffffff"
+            tools:text="Kelion4s pradzia: aprasymas n tt" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp">
+
+        <ImageView
+            android:id="@+id/ft2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/bildukas" />
+
+        <TextView
             android:id="@+id/text3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:background="#4b000000"
+            android:padding="8dp"
+            android:textColor="#d0ffffff"
+            tools:text="Kelion4s pradzia: aprasymas n tt"
 
             />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="360dp">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/road"
             android:scaleType="centerCrop"
-            />
+            android:src="@drawable/road" />
+
         <TextView
+            android:id="@+id/text4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Kelion4s pradzia: aprasymas n tt"
             android:layout_alignParentBottom="true"
-            android:textColor="#d0ffffff"
-            android:padding="8dp"
             android:layout_centerVertical="true"
             android:background="#4b000000"
-            android:id="@+id/text4"
-            />
+            android:padding="8dp"
+            android:textColor="#d0ffffff"
+            tools:text="Kelion4s pradzia: aprasymas n tt" />
     </RelativeLayout>
 </LinearLayout>

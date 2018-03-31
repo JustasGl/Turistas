@@ -3,8 +3,8 @@ package com.example.android.turistas;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -15,26 +15,27 @@ public class dziugonamai extends AppCompatActivity {
     public static final String HTTP_MAPS_GOOGLE_CO_IN_MAPS_Q = "http://maps.google.co.in/maps?q=";
     public static final String TELŠIAI_CHEESE_DŽIUGAS_HOUSE_TELŠIAI = "Telšiai,Cheese Džiugas House, Telšiai ";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(dziugonamai.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -45,12 +46,12 @@ public class dziugonamai extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dziugonamai);
 
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                skamb ();
+                skamb();
                 String str_location = TELŠIAI_CHEESE_DŽIUGAS_HOUSE_TELŠIAI;
                 String map = HTTP_MAPS_GOOGLE_CO_IN_MAPS_Q + str_location;
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(map));
@@ -60,17 +61,17 @@ public class dziugonamai extends AppCompatActivity {
         tel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                skamb ();
+                skamb();
                 String phone = "+370-444-53748";
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(TEL, phone, null));
                 startActivity(intent);
             }
         });
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                skamb ();
+                skamb();
                 String daugiau = HTTPS_WWW_GOOGLE_COM_SEARCH_CLIENT_FIREFOX_B_BIW_1920_BIH_971_EI_PPN8_WFQL_KKJ_O6_ASOQQ2_QCQ_Q_D_C5_BEIUGO_NAMAI_TEL_C5_A1IUOSE_OQ_D_C5_BEIUGO_NAMAI_TEL_C5_A1IUOSE_GS_L_PSY_AB_12_170885_189681_0_192740_0_0_0_0_0_0_0_0_0_0_0_1_1_64_PSY_AB_0_0_0_0_HTXODOOW_LZY_GFE_RD_CR_DCR_0;
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                 startActivity(i);

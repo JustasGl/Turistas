@@ -5,9 +5,9 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
@@ -25,26 +25,27 @@ public class KretingosNakvynes extends AppCompatActivity {
     public static final String SMAGRATIS = "Smagratis";
     public static final String TOP_3_VIEŠBUČIŲ = "Top 3 Viešbučių";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(KretingosNakvynes.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -71,12 +72,12 @@ public class KretingosNakvynes extends AppCompatActivity {
         final ArrayList<word> Knakvynes = new ArrayList<word>();
         Knakvynes.add(new word(R.drawable.plunges_nakvynes, TOP_3_VIEŠBUČIŲ));
         Knakvynes.add(new word(R.drawable.smagratis, SMAGRATIS));
-        Knakvynes.add(new word(R.drawable. vikgreta, VIK_GRETA));
+        Knakvynes.add(new word(R.drawable.vikgreta, VIK_GRETA));
         Knakvynes.add(new word(R.drawable.airovita, AIROVITA));
         Knakvynes.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(KretingosNakvynes.this, Knakvynes);
-        ListView Listtranslated = (ListView)findViewById(R.id.list);
+        ListView Listtranslated = (ListView) findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -84,25 +85,25 @@ public class KretingosNakvynes extends AppCompatActivity {
 
                 word listas = Knakvynes.get(position);
 
-                switch (position){
+                switch (position) {
                     case 1:
-                        skamb ();
+                        skamb();
                         Intent intent = new Intent(KretingosNakvynes.this, smagratis.class);
-                        intent.putExtra(ARNAKVYNE,true);
+                        intent.putExtra(ARNAKVYNE, true);
                         startActivity(intent);
                         break;
                     case 2:
-                        skamb ();
+                        skamb();
                         Intent intentas = new Intent(KretingosNakvynes.this, vikgreta.class);
                         startActivity(intentas);
                         break;
                     case 3:
-                        skamb ();
+                        skamb();
                         Intent intentas1 = new Intent(KretingosNakvynes.this, airovita.class);
                         startActivity(intentas1);
                         break;
                     case 4:
-                        skamb ();
+                        skamb();
                         String daugiau = HTTPS_WWW_GOOGLE_LT_SEARCH_RLZ_1_C1_CHBF_EN_LT747_LT747_EI_WMZ8_WCJ0_M8N_C6_QSO5A_KACA_Q_NAKVYN_C4_97S_KRETINGOJE_OQ_NAKVYN_C4_97S_KRETINGOJE_GS_L_PSY_AB_3_0I22I30K1_8609_10473_0_11993_10_10_0_0_0_0_324_901_9J3_1_10_0_0_1_1_64_PSY_AB_0_8_766_33I160K1_0_G_WRID8_DM7RK;
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                         startActivity(i);

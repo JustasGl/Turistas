@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval" android:useLevel="true"
-    android:thickness="@dimen/activity_horizontal_margin">
+    android:shape="oval"
+    android:thickness="@dimen/activity_horizontal_margin"
+    android:useLevel="true">
 
-    <size android:height="8dip" android:width="8dip" />
+    <size
+        android:width="8dip"
+        android:height="8dip" />
 
-    <solid android:color="#e2ffffff"/>
+    <solid android:color="#e2ffffff" />
 </shape>

@@ -2,8 +2,8 @@ package com.example.android.turistas;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -17,8 +17,8 @@ public class narkos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arkos);
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

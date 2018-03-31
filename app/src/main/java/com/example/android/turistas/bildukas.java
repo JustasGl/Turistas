@@ -2,8 +2,8 @@ package com.example.android.turistas;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,8 +14,8 @@ public class bildukas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bildukas);
 
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,8 +34,8 @@ public class bildukas extends AppCompatActivity {
             }
         });
 
-        ImageView adress1 = (ImageView)findViewById(R.id.adreso1);
-        ImageView tel1 = (ImageView)findViewById(R.id.telefono1);
+        ImageView adress1 = (ImageView) findViewById(R.id.adreso1);
+        ImageView tel1 = (ImageView) findViewById(R.id.telefono1);
         adress1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,8 +53,8 @@ public class bildukas extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ImageView adress2 = (ImageView)findViewById(R.id.adreso2);
-        ImageView tel2 = (ImageView)findViewById(R.id.telefono2);
+        ImageView adress2 = (ImageView) findViewById(R.id.adreso2);
+        ImageView tel2 = (ImageView) findViewById(R.id.telefono2);
         adress2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +72,7 @@ public class bildukas extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

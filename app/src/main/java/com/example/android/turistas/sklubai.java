@@ -3,8 +3,8 @@ package com.example.android.turistas;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -17,26 +17,27 @@ public class sklubai extends AppCompatActivity {
     public static final String VILNIAUS_G_126_ŠIAULIAI_76291 = "Vilniaus g. 126, Šiauliai 76291";
     public static final String VASARIO_16_OSIOS_G_48_ŠIAULIAI_76291 = "Vasario 16-osios g. 48, Šiauliai 76291";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(sklubai.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -47,8 +48,8 @@ public class sklubai extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sklubai);
 
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,8 +70,8 @@ public class sklubai extends AppCompatActivity {
             }
         });
 
-        ImageView adress1 = (ImageView)findViewById(R.id.adreso1);
-        ImageView tel1 = (ImageView)findViewById(R.id.telefono1);
+        ImageView adress1 = (ImageView) findViewById(R.id.adreso1);
+        ImageView tel1 = (ImageView) findViewById(R.id.telefono1);
         adress1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,8 +92,8 @@ public class sklubai extends AppCompatActivity {
             }
         });
 
-        ImageView adress2 = (ImageView)findViewById(R.id.adreso2);
-        ImageView tel2 = (ImageView)findViewById(R.id.telefono2);
+        ImageView adress2 = (ImageView) findViewById(R.id.adreso2);
+        ImageView tel2 = (ImageView) findViewById(R.id.telefono2);
         adress2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,7 +113,7 @@ public class sklubai extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -46,47 +46,47 @@
         <activity
             android:name=".pekinas"
             android:label="Restoranai Mažeikiuose"
-            android:parentActivityName=".MazeikiuRestoranai" />
+            />
         <activity
             android:name=".arkos"
             android:label="Restoranai Mažeikiuose"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:parentActivityName=".MazeikiuRestoranai" />
+             />
         <activity
             android:name=".Haochi"
             android:label="Restoranai Mažeikiuose"
-            android:parentActivityName=".MazeikiuRestoranai" />
+             />
         <activity
             android:name=".Laisves30"
             android:label="Restoranai Mažeikiuose"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:parentActivityName=".MazeikiuRestoranai" />
+           />
         <activity
             android:name=".Roala"
             android:label="Restoranai Mažeikiuose"
-            android:parentActivityName=".MazeikiuRestoranai" />
+           />
         <activity
             android:name=".Rosso"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Restoranai Mažeikiuose"
-            android:parentActivityName=".MazeikiuRestoranai" />
+            />
         <activity
             android:name=".Gama"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Restoranai Mažeikiuose"
-            android:parentActivityName=".MazeikiuRestoranai" />
+            />
         <activity
             android:name=".Picasso"
             android:label="Restoranai Mažeikiuose"
-            android:parentActivityName=".MazeikiuRestoranai" />
+            />
         <activity
             android:name=".Cancan"
             android:label="Restoranai Mažeikiuose"
-            android:parentActivityName=".MazeikiuRestoranai" />
+            />
         <activity
             android:name=".Charlie"
             android:label="Restoranai Mažeikiuose"
-            android:parentActivityName=".MazeikiuRestoranai" />
+            />
         <activity
             android:name=".dziugonamai"
             android:label="Restoranai Telšiuose"
@@ -213,22 +213,15 @@
             android:label="Restoranai Plungėje"
             android:parentActivityName=".PlungesRestoranai" />
         <activity
-            android:name=".KretingosRestoranai"
-            android:label="Restoranai Kretingoje"
-            android:parentActivityName=".Restoranai" />
-        <activity
             android:name=".vienaragiomalunas"
-            android:label="Restoranai Kretingoje"
-            android:parentActivityName=".KretingosRestoranai" />
+            android:label="Restoranai Kretingoje" />
         <activity
             android:name=".pasgrafa"
-            android:label="Restoranai Kretingoje"
-            android:parentActivityName=".KretingosRestoranai" />
+            android:label="Restoranai Kretingoje" />
         <activity
             android:name=".smagratis"
             android:label="Restoranai Kretingoje"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:parentActivityName=".KretingosRestoranai" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".SkuodoRestoranai"
             android:label="Restoranai Skuode"

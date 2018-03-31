@@ -1,281 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.android.turistas.pklubai"
-        android:orientation="vertical">
+       style="@style/matchnmatch"
+        android:orientation="vertical"
+        tools:context="com.example.android.turistas.pklubai">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Naktiniai Klubai"
-            android:textSize="60sp"
-            android:textAlignment="center"/>
+            style="@style/InfoTitle"
+            android:text="@string/naktiniai_klubai"
+            />
+        <View
+            style="@style/InfoSeperator"/>
+        <TextView
+            style="@style/InfoTitle"
+            android:text="@string/GaleraTitle"
+            android:textSize="@dimen/contactstextsize"
+            />
+
+        <TextView
+            style="@style/InfoKontaktaiGrafa"
+            android:text="@string/kontaktai"
+            />
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <View
-                android:layout_margin="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/skyriklis"
-                android:layout_marginBottom="8dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Galera"
-                android:textSize="32dp"
-                android:textAlignment="center"
+            style="@style/matchnwrap"
+            android:orientation="horizontal">
 
-                android:layout_marginTop="8dp"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Kontaktai"
-                android:textSize="32dp"
-                android:textAlignment="center"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="8dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Tel. nr. (8-448) 71487"
-                    android:textSize="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:textColor="@color/juoda"
-                    android:layout_weight="1"/>
+                android:text="@string/GaleraTelNr"
+                style="@style/InfoTelNr" />
 
-                <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Adresas: Stoties g. 46, Plungė 90115"
-                    android:textSize="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:textColor="@color/juoda"
-                    android:layout_weight="1"/>
-            </LinearLayout>
-            <View
-                android:layout_margin="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/skyriklis"
-                android:layout_marginBottom="8dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/telnr"
-                    android:layout_weight="1"
-                    android:id="@+id/telefono"
-                    android:background="?attr/selectableItemBackground"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/skyriklis"/>
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/adresas"
-                    android:layout_weight="1"
-                    android:id="@+id/adreso"
-                    android:background="?attr/selectableItemBackground"/>
-            </LinearLayout>
+            <TextView
+                android:text="@string/GaleraAddres"
+                style="@style/InfoKontaktai" />
         </LinearLayout>
+
+        <View
+            style="@style/InfoSeperator"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/telefono"
+                style="@style/InfoTelPic" />
+
+            <View
+                style="@style/InfoVerticalSkyriklis" />
+
+            <ImageView
+                android:id="@+id/adreso"
+                style="@style/InfoMapPic" />
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <View
-                android:layout_margin="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/skyriklis"
-                android:layout_marginBottom="8dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bildukas"
-                android:textSize="32dp"
-                android:textAlignment="center"
+                style="@style/InfoSeperator"/>
 
-                android:layout_marginTop="8dp"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Kontaktai"
-                android:textSize="32dp"
-                android:textAlignment="center"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="8dp"/>
+                style="@style/InfoTitle"
+                android:text="@string/bildukas"
+                android:textSize="@dimen/contactstextsize"
+                />
+
+            <TextView
+                style="@style/InfoKontaktaiGrafa"
+                android:text="@string/kontaktai"
+                />
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/matchnwrap"
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Tel. nr. (8-448) 51451"
-                    android:textSize="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:textColor="@color/juoda"
-                    android:layout_weight="1"/>
 
                 <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Dariaus ir Girėno g. 2A, Plungė 90167"
-                    android:textSize="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:textColor="@color/juoda"
-                    android:layout_weight="1"/>
+                    android:text="@string/PlungeBildukasTelNR"
+                    style="@style/InfoTelNr" />
+
+                <TextView
+                    android:text="@string/PlungesBildukasAddres"
+                    style="@style/InfoKontaktai" />
             </LinearLayout>
+
             <View
-                android:layout_margin="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/skyriklis"
-                android:layout_marginBottom="8dp"/>
+                style="@style/InfoSeperator"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/telnr"
-                    android:layout_weight="1"
                     android:id="@+id/telefono1"
-                    android:background="?attr/selectableItemBackground"/>
+                    style="@style/InfoTelPic" />
+
                 <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/skyriklis"/>
+                    style="@style/InfoVerticalSkyriklis" />
+
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/adresas"
-                    android:layout_weight="1"
                     android:id="@+id/adreso1"
-                    android:background="?attr/selectableItemBackground"/>
+                    style="@style/InfoMapPic" />
             </LinearLayout>
+
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <View
-                android:layout_margin="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/skyriklis"
-                android:layout_marginBottom="8dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Centras"
-                android:textSize="32dp"
-                android:textAlignment="center"
+                style="@style/InfoSeperator"/>
 
-                android:layout_marginTop="8dp"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Kontaktai"
-                android:textSize="32dp"
-                android:textAlignment="center"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="8dp"/>
+                style="@style/InfoTitle"
+                android:text="@string/CentrasPlungeTitle"
+                android:textSize="@dimen/contactstextsize"
+                />
+
+            <TextView
+                style="@style/InfoKontaktaiGrafa"
+                android:text="@string/kontaktai"
+                />
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/matchnwrap"
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Tel. nr. (8-615) 41836"
-                    android:textSize="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:textColor="@color/juoda"
-                    android:layout_weight="1"/>
 
                 <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Adresas: Senamiesčio a. 3, Plungė 90162"
-                    android:textSize="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:textColor="@color/juoda"
-                    android:layout_weight="1"/>
+                    android:text="@string/CentrasPlungeTelNR"
+                    style="@style/InfoTelNr" />
+
+                <TextView
+                    android:text="@string/CentrasPlungeAddres"
+                    style="@style/InfoKontaktai" />
             </LinearLayout>
+
             <View
-                android:layout_margin="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/skyriklis"
-                android:layout_marginBottom="8dp"/>
+                style="@style/InfoSeperator"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/telnr"
-                    android:layout_weight="1"
                     android:id="@+id/telefono2"
-                    android:background="?attr/selectableItemBackground"/>
+                    style="@style/InfoTelPic" />
+
                 <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/skyriklis"/>
+                    style="@style/InfoVerticalSkyriklis" />
+
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/adresas"
-                    android:layout_weight="1"
                     android:id="@+id/adreso2"
-                    android:background="?attr/selectableItemBackground"/>
+                    style="@style/InfoMapPic" />
             </LinearLayout>
+
+
         </LinearLayout>
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground">
+
             <ImageView
                 android:id="@+id/google"
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:background="#ed5564"
-                android:scaleType="fitCenter"
-                android:src="@drawable/gsearch"
-                android:foreground="?attr/selectableItemBackground"/>
+                style="@style/InfoMoreButton" />
         </FrameLayout>
     </LinearLayout>
 </ScrollView>

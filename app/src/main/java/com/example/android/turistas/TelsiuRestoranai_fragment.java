@@ -12,14 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TelsiuRestoranai_fragment extends Fragment {
 
     public static final String HTTPS_WWW_GOOGLE_LT_SEARCH_RLZ_1_C1_CHBF_EN_LT747_LT747_EI_8_P8_WF_TO_EC_LX6_QSHW76O_DQ_Q_RESTORANAI_TEL_C5_A1IUOSE_OQ_RESTORANAI_TEL_C5_A1IUOSE_GS_L_PSY_AB_3_0I19K1J0I22I10I30I19K1_112270_114908_0_115740_9_9_0_0_0_0_74_612_9_9_0_0_1_1_64_PSY_AB_0_9_610_0J0I20I263K1J0I22I30K1J0I22I30I19K1_0_FVND_MWUHBO8 = "https://www.google.lt/search?rlz=1C1CHBF_enLT747LT747&ei=_8P8WfToEcLX6QShw76oDQ&q=Restoranai+Tel%C5%A1iuose&oq=Restoranai+Tel%C5%A1iuose&gs_l=psy-ab.3..0i19k1j0i22i10i30i19k1.112270.114908.0.115740.9.9.0.0.0.0.74.612.9.9.0....0...1.1.64.psy-ab..0.9.610...0j0i20i263k1j0i22i30k1j0i22i30i19k1.0.fvndMWUHbo8";
@@ -36,18 +31,22 @@ public class TelsiuRestoranai_fragment extends Fragment {
     public static final String DŽIUGO_NAMAI = "Džiugo namai";
     public static final String UŽSUKITE_TELŠIUOSE = "Užsukite Telšiuose";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    public TelsiuRestoranai_fragment() {
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
@@ -55,17 +54,12 @@ public class TelsiuRestoranai_fragment extends Fragment {
         }
     }
 
-
-    public TelsiuRestoranai_fragment() {
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        Toolbar myToolbar = (Toolbar)rootView.findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) rootView.findViewById(R.id.my_toolbar);
         myToolbar.setVisibility(View.GONE);
 
         final ArrayList<word> Trestoranai = new ArrayList<word>();
@@ -83,7 +77,7 @@ public class TelsiuRestoranai_fragment extends Fragment {
         Trestoranai.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(getActivity(), Trestoranai);
-        ListView Listtranslated = (ListView)rootView.findViewById(R.id.list);
+        ListView Listtranslated = (ListView) rootView.findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -91,7 +85,7 @@ public class TelsiuRestoranai_fragment extends Fragment {
 
                 word listas = Trestoranai.get(position);
 
-                switch (position){
+                switch (position) {
                     case 1:
                         skamb();
                         Intent intent = new Intent(getActivity(), dziugonamai.class);
@@ -154,8 +148,8 @@ public class TelsiuRestoranai_fragment extends Fragment {
         });
         return rootView;
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(getActivity(), R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);

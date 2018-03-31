@@ -6,17 +6,16 @@ public class word {
     private String mPavadinimas;
     private int mFoto;
 
-    public word (int foto,String Pavadinimas)
-    {
-        mFoto=foto;
-        mPavadinimas=Pavadinimas;
+    public word(int foto, String Pavadinimas) {
+        mFoto = foto;
+        mPavadinimas = Pavadinimas;
     }
-    public String getTag()
-    {
+
+    public String getTag() {
         return mPavadinimas;
     }
-    public int getFoto ()
-    {
+
+    public int getFoto() {
         return mFoto;
     }
 

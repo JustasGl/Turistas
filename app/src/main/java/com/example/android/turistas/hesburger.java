@@ -3,8 +3,8 @@ package com.example.android.turistas;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -15,26 +15,27 @@ public class hesburger extends AppCompatActivity {
     public static final String HTTP_MAPS_GOOGLE_CO_IN_MAPS_Q = "http://maps.google.co.in/maps?q=";
     public static final String DARIAUS_IR_GIRĖNO_G_65_A_TAURAGĖ_72201 = "Dariaus ir Girėno g. 65A, Tauragė 72201";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(hesburger.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -45,8 +46,8 @@ public class hesburger extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hesburger);
 
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +67,7 @@ public class hesburger extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

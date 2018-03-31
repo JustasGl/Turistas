@@ -12,13 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class KretingosRestoranai_fragment extends Fragment {
 
 
@@ -28,42 +25,41 @@ public class KretingosRestoranai_fragment extends Fragment {
     public static final String PAS_GRAFĄ = "Pas grafą";
     public static final String UŽSUKITE_KRETINGOJE = "Užsukite Kretingoje";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    public KretingosRestoranai_fragment() {
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(getActivity(), R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
     }
 
-    public KretingosRestoranai_fragment() {
-        // Required empty public constructor
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.word_list, container,false);
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        Toolbar myToolbar = (Toolbar)rootView.findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) rootView.findViewById(R.id.my_toolbar);
         myToolbar.setVisibility(View.GONE);
 
         final ArrayList<word> Prestoranai = new ArrayList<word>();
@@ -74,31 +70,31 @@ public class KretingosRestoranai_fragment extends Fragment {
         Prestoranai.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(getActivity(), Prestoranai);
-        ListView Listtranslated = (ListView)rootView.findViewById(R.id.list);
+        ListView Listtranslated = (ListView) rootView.findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
 
-                switch (position){
+                switch (position) {
                     case 1:
-                        skamb ();
+                        skamb();
                         Intent intent = new Intent(getActivity(), pasgrafa.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        skamb ();
+                        skamb();
                         Intent intentas = new Intent(getActivity(), smagratis.class);
                         startActivity(intentas);
                         break;
                     case 3:
-                        skamb ();
+                        skamb();
                         Intent intentas1 = new Intent(getActivity(), vienaragiomalunas.class);
                         startActivity(intentas1);
                         break;
                     case 4:
-                        skamb ();
+                        skamb();
                         String daugiau = HTTPS_WWW_GOOGLE_LT_SEARCH_RLZ_1_C1_CHBF_EN_LT747_LT747_EI_S_MB8_WF_CY_OQI_C6_QSUN_K_W_DG_Q_RESTORANAI_KRETINGOJE_OQ_RESTORANAI_KRETINGOJE_GS_L_PSY_AB_3_0J0I22I30K1L3_95439_97930_0_98090_10_10_0_0_0_0_96_655_10_10_0_0_1_1_64_PSY_AB_0_10_655_0_V7_TO_VOZZIK4;
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                         startActivity(i);

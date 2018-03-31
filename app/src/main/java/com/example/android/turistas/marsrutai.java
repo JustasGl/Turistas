@@ -5,16 +5,14 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -37,27 +35,29 @@ public class marsrutai extends AppCompatActivity {
     public static final String PAMINKLAI = "Paminklai";
     public static final String TELŠIAI = "Telšiai";
     public static final String MAŽEIKIAI = "Mažeikiai";
-    private MediaPlayer mMediaPlayer;
     Vibrator vibrator;
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
+    private MediaPlayer mMediaPlayer;
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(marsrutai.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -88,9 +88,9 @@ public class marsrutai extends AppCompatActivity {
         marsrutai.add(new word2(R.drawable.mzk_baznycios, GAMTA1, BAŽNYČIOS));
         marsrutai.add(new word2(R.drawable.zemaitijos_muziejai, MUZIEJAI, GAMTA1));
         marsrutai.add(new word2(R.drawable.zemaitijos_gamta, ARCHITEKTŪRA, GAMTA));
-        marsrutai.add(new word2(R.drawable.daugiaup, "",""));
+        marsrutai.add(new word2(R.drawable.daugiaup, "", ""));
         Adaptoreditor3 adapteris = new Adaptoreditor3(marsrutai.this, marsrutai);
-        ListView Listtranslated = (ListView)findViewById(R.id.list);
+        ListView Listtranslated = (ListView) findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setLongClickable(true);
         Listtranslated.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -98,8 +98,7 @@ public class marsrutai extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id) {
                 skamb();
                 vibrator.vibrate(200);
-                switch (pos)
-                {
+                switch (pos) {
                     case 0:
 
                         String map = HTTPS_DRIVE_GOOGLE_COM_OPEN_ID_1_MGQ_OB_B8BCK_GA_CYD_A6_ZMMNI_UD_RYIRG3_USP_SHARING;
@@ -145,16 +144,14 @@ public class marsrutai extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                if(position==6)
-                {
-                        String daugiau = HTTPS_WWW_GOOGLE_COM_SEARCH_CLIENT_FIREFOX_B_AB_BIW_958_BIH_954_EI_O1_EIWSVN_O_Z_YG_ABU440_Y_Q_MAR_C5_A1RUTAI_PO_C5_BDEMAITIJA_OQ_MAR_C5_A1RUTAI_PO_C5_BDEMAITIJA_GS_L_PSY_AB_3_2793_2793_0_2947_1_1_0_0_0_0_145_145_0J1_1_0_0_1_1_64_PSY_AB_0_0_0_0_I5GJ_PZCH1_E_GFE_RD_CR_DCR_0;
-                        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
-                        startActivity(i);
-                }
-                else{
-                 Intent intent = new Intent(marsrutai.this, marsrutaugaleru.class);
-                intent.putExtra(IREIKSME, position);
-                startActivity(intent);
+                if (position == 6) {
+                    String daugiau = HTTPS_WWW_GOOGLE_COM_SEARCH_CLIENT_FIREFOX_B_AB_BIW_958_BIH_954_EI_O1_EIWSVN_O_Z_YG_ABU440_Y_Q_MAR_C5_A1RUTAI_PO_C5_BDEMAITIJA_OQ_MAR_C5_A1RUTAI_PO_C5_BDEMAITIJA_GS_L_PSY_AB_3_2793_2793_0_2947_1_1_0_0_0_0_145_145_0J1_1_0_0_1_1_64_PSY_AB_0_0_0_0_I5GJ_PZCH1_E_GFE_RD_CR_DCR_0;
+                    Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
+                    startActivity(i);
+                } else {
+                    Intent intent = new Intent(marsrutai.this, marsrutaugaleru.class);
+                    intent.putExtra(IREIKSME, position);
+                    startActivity(intent);
                 }
             }
         });

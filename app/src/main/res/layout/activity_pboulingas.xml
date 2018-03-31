@@ -1,113 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.android.turistas.pboulingas"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context="com.example.android.turistas.aerodromas"
+        style="@style/matchnmatch">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Boulingas"
-            android:textSize="60sp"
-            android:textAlignment="center"/>
+            style="@style/InfoTitle"
+            android:text="@string/boulingas" />
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Konferencijų ir laisvalaikio centras Porto"
-            android:textSize="15sp"
-            android:textAlignment="center"/>
-
+            style="@style/InfoTitle"
+            android:text="@string/PlungeBoulingasDescription"
+            android:textSize="@dimen/adressSize"/>
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            style="@style/InfoSeperator"/>
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kontaktai"
-            android:textSize="32dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="8dp"/>
+            style="@style/InfoKontaktaiGrafa"
+            android:text="@string/kontaktai"
+            />
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/matchnwrap"
             android:orientation="horizontal">
-            <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Tel. nr. (8-611) 50200"
-                android:textSize="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColor="@color/juoda"
-                android:layout_weight="1"/>
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Adresas: Pramogų g. 2 Truikiai Vlg. s raj. Plungė, Plungė 90110"
-                android:textSize="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColor="@color/juoda"
-                android:layout_weight="1"/>
+                android:text="@string/PlungeBoulingasTelNR"
+                style="@style/InfoTelNr"/>
+
+            <TextView
+                style="@style/InfoKontaktai"
+                android:text="@string/PlungeBoulingasAddres"
+                />
         </LinearLayout>
+
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            style="@style/InfoSeperator" />
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            style="@style/matchnwrap">
+
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/telnr"
-                android:layout_weight="1"
-                android:id="@+id/telefono"
-                android:background="?attr/selectableItemBackground"/>
+                style="@style/InfoTelPic"
+                android:contentDescription="@string/phonebutton"
+                android:id="@+id/telefono"/>
+
             <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/skyriklis"/>
+                style="@style/InfoVerticalSkyriklis" />
+
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/adresas"
-                android:layout_weight="1"
                 android:id="@+id/adreso"
-                android:background="?attr/selectableItemBackground"/>
+                style="@style/InfoMapPic"
+                android:contentDescription="@string/mapsbutton" />
         </LinearLayout>
+
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/matchnwrap"
             android:foreground="?attr/selectableItemBackground">
+
             <ImageView
+                style="@style/InfoMoreButton"
                 android:id="@+id/google"
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:background="#ed5564"
-                android:scaleType="fitCenter"
-                android:src="@drawable/gsearch"
-                android:foreground="?attr/selectableItemBackground"/>
+                android:contentDescription="@string/MoreButton" />
         </FrameLayout>
     </LinearLayout>
 </ScrollView>

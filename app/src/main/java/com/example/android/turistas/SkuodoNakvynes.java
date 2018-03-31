@@ -5,9 +5,9 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
@@ -24,26 +24,27 @@ public class SkuodoNakvynes extends AppCompatActivity {
     public static final String PAS_NERIJŲ = "Pas Nerijų";
     public static final String TOP_2_VIEŠBUČIŲ = "Top 2 Viešbučių";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(SkuodoNakvynes.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -70,11 +71,11 @@ public class SkuodoNakvynes extends AppCompatActivity {
         final ArrayList<word> Skuodonakvynes = new ArrayList<word>();
         Skuodonakvynes.add(new word(R.drawable.skuodo_nakvynes, TOP_2_VIEŠBUČIŲ));
         Skuodonakvynes.add(new word(R.drawable.pasneriju2, PAS_NERIJŲ));
-        Skuodonakvynes.add(new word(R.drawable. aroma, UŽEIGA_AROMA));
+        Skuodonakvynes.add(new word(R.drawable.aroma, UŽEIGA_AROMA));
         Skuodonakvynes.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(SkuodoNakvynes.this, Skuodonakvynes);
-        ListView Listtranslated = (ListView)findViewById(R.id.list);
+        ListView Listtranslated = (ListView) findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -82,20 +83,20 @@ public class SkuodoNakvynes extends AppCompatActivity {
 
                 word listas = Skuodonakvynes.get(position);
 
-                switch (position){
+                switch (position) {
                     case 1:
-                        skamb ();
+                        skamb();
                         Intent intent = new Intent(SkuodoNakvynes.this, pasneriju.class);
                         intent.putExtra(ARNAKVYNE, true);
                         startActivity(intent);
                         break;
                     case 2:
-                        skamb ();
+                        skamb();
                         Intent intentas = new Intent(SkuodoNakvynes.this, aroma.class);
                         startActivity(intentas);
                         break;
                     case 3:
-                        skamb ();
+                        skamb();
                         String daugiau = HTTPS_WWW_GOOGLE_LT_SEARCH_RLZ_1_C1_CHBF_EN_LT747_LT747_EI_ZCZ8_WF6V_MOQR6_AS_Z7J_YCA_Q_NAKVYN_C4_97S_SKUODE_OQ_NAKVYN_C4_97S_SKUODE_GS_L_PSY_AB_3_0I22I30K1_1729_3977_0_4449_6_6_0_0_0_0_124_441_5J1_6_0_0_1_1_64_PSY_AB_0_5_376_33I160K1_0_DQ_AFZY7OM_VI;
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                         startActivity(i);

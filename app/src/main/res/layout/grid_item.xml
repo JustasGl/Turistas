@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-<ImageView
-    android:foreground="?attr/selectableItemBackground"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:src="@drawable/bildukas"
-    android:id="@+id/gridimg"
-    android:scaleType="centerCrop"/>
+        <ImageView
+            android:id="@+id/gridimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="?attr/selectableItemBackground"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/bildukas" />
+
         <TextView
             android:id="@+id/gridtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Pavyzdys kaipatrodys"
-            android:textAlignment="center"
-        android:textSize="20sp"
-            android:textColor="#91ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center"
+            android:textColor="#91ffffff"
+            android:textSize="20sp"
+            tools:text="Pavyzdys kaipatrodys" />
     </RelativeLayout>
 </LinearLayout>

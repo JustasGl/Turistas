@@ -1,20 +1,17 @@
 package com.example.android.turistas;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.content.ContextCompat;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import java.util.ArrayList;
 
 public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     private ArrayList<Integer> itemData;
-    private ImageView[] dots;
+
     public FragmentPagerAdapter(FragmentManager fm, ArrayList<Integer> itemData) {
         super(fm);
         this.itemData = itemData;

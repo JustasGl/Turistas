@@ -5,22 +5,18 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
-import static android.R.attr.value;
 
 public class Lanktyvtinos_vietos extends AppCompatActivity {
 
@@ -44,26 +40,27 @@ public class Lanktyvtinos_vietos extends AppCompatActivity {
     public static final String ENERGETINIAI_LABIRINTAI = "Energetiniai labirintai";
     public static final String PLUNGĖS_DVARAS = "Plungės dvaras";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(Lanktyvtinos_vietos.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -74,7 +71,7 @@ public class Lanktyvtinos_vietos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
-        
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -113,7 +110,7 @@ public class Lanktyvtinos_vietos extends AppCompatActivity {
         });
         visiRestoranai.add(new word(R.drawable.daugiaup, ""));
         Adaptoreditor2 adapteris = new Adaptoreditor2(Lanktyvtinos_vietos.this, visiRestoranai);
-        ListView Listtranslated = (ListView)findViewById(R.id.list);
+        ListView Listtranslated = (ListView) findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

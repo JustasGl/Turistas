@@ -5,9 +5,9 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
@@ -26,26 +26,27 @@ public class TelsiuLinksmybes extends AppCompatActivity {
     public static final String BOULINGAS = "Boulingas";
     public static final String ŠOKIAI = "Šokiai";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(TelsiuLinksmybes.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -85,7 +86,7 @@ public class TelsiuLinksmybes extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 word listas = Tlinksmybes.get(position);
-                skamb ();
+                skamb();
                 switch (position) {
                     case 0:
                         Intent intents = new Intent(TelsiuLinksmybes.this, tklubai.class);
@@ -121,4 +122,4 @@ public class TelsiuLinksmybes extends AppCompatActivity {
         });
 
     }
-    }
+}

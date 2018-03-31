@@ -1,33 +1,20 @@
 package com.example.android.turistas;
 
-import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.net.Uri;
-import android.os.Vibrator;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-
-import static com.example.android.turistas.R.id.aprasymas;
-import static com.example.android.turistas.R.id.atgal;
-import static com.example.android.turistas.R.id.pavadinimas;
-import static com.example.android.turistas.R.id.text3;
-import static com.example.android.turistas.R.id.text4;
 
 public class marsrutaugaleru extends AppCompatActivity {
     public static final String GRĮŽIMAS_IŠ_PLUNGĖS_Į_MAŽEIKIUS_UŽTRUNKA_1_VAL = "Grįžimas iš Plungės į Mažeikius užtrunka 1 val.";
@@ -134,29 +121,31 @@ public class marsrutaugaleru extends AppCompatActivity {
     public static final String VAŽIUOJATE_40_KILOMETRŲ_APIE_37_MINUTES_ATVYKSTATE_Į_TELŠIUS = "Važiuojate 40 kilometrų apie 37 minutes. Atvykstate į Telšius.";
     public static final String IREIKSME = "IREIKSME";
     int i;
-    ImageView iprieki,atgal;
-    int maks=5;
-    private MediaPlayer mMediaPlayer;
+    ImageView iprieki, atgal;
+    int maks = 5;
     Animation blink;
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
+    private MediaPlayer mMediaPlayer;
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(marsrutaugaleru.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -179,7 +168,7 @@ public class marsrutaugaleru extends AppCompatActivity {
         upArrow.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
-        i=getIntent().getIntExtra(IREIKSME,0);
+        i = getIntent().getIntExtra(IREIKSME, 0);
         blink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
         iprieki = (ImageView) findViewById(R.id.iprieki);
         atgal = (ImageView) findViewById(R.id.atgal);
@@ -187,17 +176,17 @@ public class marsrutaugaleru extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 i++;
-                if (i>maks)
-                    i=maks;
-             setcontent();
+                if (i > maks)
+                    i = maks;
+                setcontent();
             }
         });
         atgal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 i--;
-                if(i==-1)
-                    i=0;
+                if (i == -1)
+                    i = 0;
                 setcontent();
             }
         });
@@ -206,8 +195,7 @@ public class marsrutaugaleru extends AppCompatActivity {
 
     void setcontent() {
         final ArrayList<word3> Tnakvynes = new ArrayList<word3>();
-        switch(i)
-        {
+        switch (i) {
             case 0:
 
                 Tnakvynes.add(new word3(R.drawable.mzksq, IŠVYKSTATE_IŠ_MAŽEIKIŲ, VAŽIUOJATE_40_KILOMETRŲ_APIE_37_MINUTES_ATVYKSTATE_Į_TELŠIUS, R.drawable.telsiaisq, TELŠIŲ_PANORAMA, "", TELŠIAI, TRUKMĖ_6_30_7_00_VAL_APLANKOTE_ŽEMAITIJOS_SOSTINĘ_TELŠIUS));
@@ -232,30 +220,30 @@ public class marsrutaugaleru extends AppCompatActivity {
             case 2:
                 iprieki.setAnimation(blink);
                 atgal.setAnimation(blink);
-                Tnakvynes.add(new word3(R.drawable.mzksq , IŠVAŽIUOJATE_IŠ_MAŽEIKIŲ1, KELIONĖ_IKI_VIEKŠNIŲ_APIE_16_MIN,R.drawable.vieksniaisq, VIEKŠNIAI_PAMINKLAS_BIRŽIŠKOMS, PO_TO_300_M_PĖŠČIOMIS_EINATE_IKI_VYTAUTO_DIDŽIOJO_PAMINKLO, MAŽEIKIŲ_RAJONAS, TRUKMĖ_6_00_VAL_APLANKOTE_PAMINKLĄ_BIRŽIŠKOMS_VYTAUTO_DIDŽIOJO_PAMINKLĄ_A_GRIŠKEVIČIAUS_MUZIEJŲ_PAVIRVYTĖS_RENAVO_DAUTARŲ_DVARUS_IR_GRĮŽTATE_PRO_ORLEN_LIETUVA_NAFTOS_PERDIRBIMO_GAMYKLĄ));
-                Tnakvynes.add(new word3(R.drawable.vytautosq , PAMINKLAS_YRA_4_M_AUKŠČIO_BETONINIS_JAME_PAVAIZDUOTA_VYTAUTAS_DIDYSIS_TRAKŲ_PILIS_VYTIS_ŠV_ALOYZAS_TRIJŲ_KRYŽIŲ_KALNAS_IR_ŽEMAIČIŲ_SIMBOLIS_MEŠKA_1983_1984_M_IR_1999_M_RESTAURUOTAS, M_EINATE_IKI_A_GRIŠKEVIČIAUS_MEMORIALINIO_MUZIEJAUS,R.drawable.griskeviciaussq , LIETUVOS_AVIACIJOS_PRADININKO_A_GRIŠKEVIČIAUS_MEMORIALINIS_MUZIEJUS, APLANKĘ_MUZIEJŲ_VAŽIUOJATE_APIE_9_MIN_IKI_PAVIRVYTĖS_DVARO));
-                Tnakvynes.add(new word3(R.drawable.pavirvytessq , PAVIRVYTĖS_DVARAS_ĮSIKŪRĘS_VIRVYTĖS_UPĖS_DEŠINIAJAME_KRANTE, APŽIŪRĖJĘ_DVARĄ_VAŽIUOJATE_APIE_44_MIN_IKI_RENAVO,R.drawable.rensq , RENAVO_DVARAS, PO_TO_VAŽIUOJATE_21_MIN_IKI_DAUTARŲ));
-                Tnakvynes.add(new word3(R.drawable.dautsq , DAUTARŲ_DVARAS, Į_MAŽEIKIUS_GRĮŠTATE_PRO_PIKELIUS_PAKELIUI_PRAVAŽIUODAMI_PRO_NAFTOS_PERDIRBIMO_GAMYKLĄ,R.drawable.naftasq , DIDŽIAUSIA_GAMYKLA_BALTIJOS_ŠALYSE_ORLEN_LIETUVA, NUO_GAMYKLOS_IKI_MAŽEIKIŲ_VAŽIUOJATE_APIE_20_MIN));
+                Tnakvynes.add(new word3(R.drawable.mzksq, IŠVAŽIUOJATE_IŠ_MAŽEIKIŲ1, KELIONĖ_IKI_VIEKŠNIŲ_APIE_16_MIN, R.drawable.vieksniaisq, VIEKŠNIAI_PAMINKLAS_BIRŽIŠKOMS, PO_TO_300_M_PĖŠČIOMIS_EINATE_IKI_VYTAUTO_DIDŽIOJO_PAMINKLO, MAŽEIKIŲ_RAJONAS, TRUKMĖ_6_00_VAL_APLANKOTE_PAMINKLĄ_BIRŽIŠKOMS_VYTAUTO_DIDŽIOJO_PAMINKLĄ_A_GRIŠKEVIČIAUS_MUZIEJŲ_PAVIRVYTĖS_RENAVO_DAUTARŲ_DVARUS_IR_GRĮŽTATE_PRO_ORLEN_LIETUVA_NAFTOS_PERDIRBIMO_GAMYKLĄ));
+                Tnakvynes.add(new word3(R.drawable.vytautosq, PAMINKLAS_YRA_4_M_AUKŠČIO_BETONINIS_JAME_PAVAIZDUOTA_VYTAUTAS_DIDYSIS_TRAKŲ_PILIS_VYTIS_ŠV_ALOYZAS_TRIJŲ_KRYŽIŲ_KALNAS_IR_ŽEMAIČIŲ_SIMBOLIS_MEŠKA_1983_1984_M_IR_1999_M_RESTAURUOTAS, M_EINATE_IKI_A_GRIŠKEVIČIAUS_MEMORIALINIO_MUZIEJAUS, R.drawable.griskeviciaussq, LIETUVOS_AVIACIJOS_PRADININKO_A_GRIŠKEVIČIAUS_MEMORIALINIS_MUZIEJUS, APLANKĘ_MUZIEJŲ_VAŽIUOJATE_APIE_9_MIN_IKI_PAVIRVYTĖS_DVARO));
+                Tnakvynes.add(new word3(R.drawable.pavirvytessq, PAVIRVYTĖS_DVARAS_ĮSIKŪRĘS_VIRVYTĖS_UPĖS_DEŠINIAJAME_KRANTE, APŽIŪRĖJĘ_DVARĄ_VAŽIUOJATE_APIE_44_MIN_IKI_RENAVO, R.drawable.rensq, RENAVO_DVARAS, PO_TO_VAŽIUOJATE_21_MIN_IKI_DAUTARŲ));
+                Tnakvynes.add(new word3(R.drawable.dautsq, DAUTARŲ_DVARAS, Į_MAŽEIKIUS_GRĮŠTATE_PRO_PIKELIUS_PAKELIUI_PRAVAŽIUODAMI_PRO_NAFTOS_PERDIRBIMO_GAMYKLĄ, R.drawable.naftasq, DIDŽIAUSIA_GAMYKLA_BALTIJOS_ŠALYSE_ORLEN_LIETUVA, NUO_GAMYKLOS_IKI_MAŽEIKIŲ_VAŽIUOJATE_APIE_20_MIN));
                 skamb();
 
                 break;
             case 3:
                 iprieki.setAnimation(blink);
                 atgal.setAnimation(blink);
-                Tnakvynes.add(new word3(R.drawable.mzksq , IŠVYKSTATE_IŠ_MAŽEIKIŲ, IKI_NAUJOSIOS_AKMENĖS_KALKAKMENIO_KARJIERO_VAŽIUOJATE_APIE_37_MIN,R.drawable.karjierassq , KALKAKMENIO_KARJIERAS_NORINT_APLANKYTI_BŪTINA_SUSITARTI_IŠ_ANKSTO_ČIA_VAIKŠTANT_ATRODO_KAD_ESATE_TOLI_NUO_LIETUVIŠKŲ_LYGUMŲ_VAIZDAI_LYG_KALNUOSE_LYG_TARPEKLYJE, APLANKĘ_KARJIERĄ_VAŽIUOJATE_Į_PAPILĘ_APIE_24_MIN, AKMENĖ_PLUNGĖ, TRUKMĖ_7_00_8_00_VAL_ŠIOS_KELIONĖS_METU_APLANKOTE_NAUJOSIOS_AKMENĖS_KALKAKMENIO_KARJIERĄ_SIMONO_DAUKANTO_KAPĄ_IR_PAMINKLĄ_PAPILĖS_PENKIOLIKAKAMIENĘ_LIEPĄ_ŠIAUDINĖS_MEDINĘ_BAŽNYČIĄ_BALSIUS_PASIRINKTINAI_OGINSKIO_RŪMUS_IR_ŽEMAIČIŲ_DAILĖS_MUZIEJŲ_PLUNGĖJE_ŠV_MERGELĖS_MARIJOS_ĖMIMO_Į_DANGŲ_BAŽNYČIĄ_SEDOJE));
-                Tnakvynes.add(new word3(R.drawable.simonassq , PAPILĖ_SIMONO_DAUKANTO_KAPAS_IR_PAMINKLAS, EINATE_700_M_IKI_PENKIOLIKAKAMIENĖS_LIEPOS,R.drawable.penkiolikasq , PENKIOLIKAKAMIENĖ_LIEPA_VALSTYBINIS_GAMTOS_PAVELDO_OBJEKTAS_JOS_AMŽIUS_APIE_150_METŲ, PO_TO_VAŽIUOJATE_APIE_8_MIN_IKI_ŠIAUDINĖS_KAIMO));
-                Tnakvynes.add(new word3(R.drawable.siaudinessq , ŠIAUDINĖS_BAŽNYČIA, VAŽIUODAMI_LINK_PLUNGĖS_GALITE_SUSTOTI_BALSIUOSE,R.drawable.balsiaisq , STOVYKLA_BALSIUSOE_NAUJAI_ĮRENGTAME_BALSIŲ_SLĖNYJE_PASINAUDODAMI_SPECIALIA_ALPINISTINE_ĮRANGA_PARKO_LANKYTOJAI_GALI_IŠBANDYTI_SAVO_JĖGAS_NUSILEIDIMO_TRASOSE_KURIOS_NUTIESTOS_PER_VIRVYTĖS_UPĘ, KELIONĖ_Į_PLUNGĘ_TĘSIAMA_62_2_KM_58_MIN));
-                Tnakvynes.add(new word3(R.drawable.orumaisq , PLUNGĖ_OGINSKIO_RŪMAI_SODYBA_UŽIMA_58_3_HA_PARKO_PLOTO, APLANKĘ_OGINSKIO_RŪMUS_ŽEMAIČIŲ_DAILĖS_MUZIEJŲ_VAŽIUOJATE_Į_SEDĄ,R.drawable.sedossvcsq , SEDA_MAŽEIKIŲ_RAJ_ŠV_MERGELĖS_MARIJOS_ĖMIMO_Į_DANGŲ_BAŽNYČIA, GRĮŽTATE_Į_MAŽEIKIUS_KELIONĖ_UŽTRUKS_APIE_1_VAL_57_1_KM));
+                Tnakvynes.add(new word3(R.drawable.mzksq, IŠVYKSTATE_IŠ_MAŽEIKIŲ, IKI_NAUJOSIOS_AKMENĖS_KALKAKMENIO_KARJIERO_VAŽIUOJATE_APIE_37_MIN, R.drawable.karjierassq, KALKAKMENIO_KARJIERAS_NORINT_APLANKYTI_BŪTINA_SUSITARTI_IŠ_ANKSTO_ČIA_VAIKŠTANT_ATRODO_KAD_ESATE_TOLI_NUO_LIETUVIŠKŲ_LYGUMŲ_VAIZDAI_LYG_KALNUOSE_LYG_TARPEKLYJE, APLANKĘ_KARJIERĄ_VAŽIUOJATE_Į_PAPILĘ_APIE_24_MIN, AKMENĖ_PLUNGĖ, TRUKMĖ_7_00_8_00_VAL_ŠIOS_KELIONĖS_METU_APLANKOTE_NAUJOSIOS_AKMENĖS_KALKAKMENIO_KARJIERĄ_SIMONO_DAUKANTO_KAPĄ_IR_PAMINKLĄ_PAPILĖS_PENKIOLIKAKAMIENĘ_LIEPĄ_ŠIAUDINĖS_MEDINĘ_BAŽNYČIĄ_BALSIUS_PASIRINKTINAI_OGINSKIO_RŪMUS_IR_ŽEMAIČIŲ_DAILĖS_MUZIEJŲ_PLUNGĖJE_ŠV_MERGELĖS_MARIJOS_ĖMIMO_Į_DANGŲ_BAŽNYČIĄ_SEDOJE));
+                Tnakvynes.add(new word3(R.drawable.simonassq, PAPILĖ_SIMONO_DAUKANTO_KAPAS_IR_PAMINKLAS, EINATE_700_M_IKI_PENKIOLIKAKAMIENĖS_LIEPOS, R.drawable.penkiolikasq, PENKIOLIKAKAMIENĖ_LIEPA_VALSTYBINIS_GAMTOS_PAVELDO_OBJEKTAS_JOS_AMŽIUS_APIE_150_METŲ, PO_TO_VAŽIUOJATE_APIE_8_MIN_IKI_ŠIAUDINĖS_KAIMO));
+                Tnakvynes.add(new word3(R.drawable.siaudinessq, ŠIAUDINĖS_BAŽNYČIA, VAŽIUODAMI_LINK_PLUNGĖS_GALITE_SUSTOTI_BALSIUOSE, R.drawable.balsiaisq, STOVYKLA_BALSIUSOE_NAUJAI_ĮRENGTAME_BALSIŲ_SLĖNYJE_PASINAUDODAMI_SPECIALIA_ALPINISTINE_ĮRANGA_PARKO_LANKYTOJAI_GALI_IŠBANDYTI_SAVO_JĖGAS_NUSILEIDIMO_TRASOSE_KURIOS_NUTIESTOS_PER_VIRVYTĖS_UPĘ, KELIONĖ_Į_PLUNGĘ_TĘSIAMA_62_2_KM_58_MIN));
+                Tnakvynes.add(new word3(R.drawable.orumaisq, PLUNGĖ_OGINSKIO_RŪMAI_SODYBA_UŽIMA_58_3_HA_PARKO_PLOTO, APLANKĘ_OGINSKIO_RŪMUS_ŽEMAIČIŲ_DAILĖS_MUZIEJŲ_VAŽIUOJATE_Į_SEDĄ, R.drawable.sedossvcsq, SEDA_MAŽEIKIŲ_RAJ_ŠV_MERGELĖS_MARIJOS_ĖMIMO_Į_DANGŲ_BAŽNYČIA, GRĮŽTATE_Į_MAŽEIKIUS_KELIONĖ_UŽTRUKS_APIE_1_VAL_57_1_KM));
                 skamb();
 
                 break;
             case 4:
                 iprieki.setAnimation(blink);
                 atgal.setAnimation(blink);
-                Tnakvynes.add(new word3(R.drawable.mzksq , IŠVYKSTATE_IŠ_MAŽEIKIŲ, VAŽIUOJATE_APIE_50_MIN_IKI_ŠALTOJO_KARO_MUZIEJAUS_PLATELIŲ_SEN_PLUNGĖS_RAJ,R.drawable.saltojoksq , ŠALTOJO_KARO_MUZIEJUS, APLANKĘ_ŠALTOJO_KARO_MUZIEJŲ_VAŽIUOJATE_LINK_SKUODO_APIE_36_MIN_LANKYTINAS_OBJEKTAS_ORVIDŲ_SODYBA, PLUNGĖ_SKUODAS, TRUKMĖ_7_00_VAL_ŠIOS_KELIONĖS_METU_APLANKOTE_ŠALTOJO_KARO_MUZIEJŲ_ORVIDŲ_SODYBĄ_ŠAUKLIŲ_RIEDULYNĄ_MOSĖDŽIO_AKMENŲ_MUZIEJŲ_APUOLĖS_PILIAKALNĮ_TRUIKINŲ_ŠALTINĮ_Į_ŠAUKLIŲ_RIEDULYNĄ_REKOMENDUOJAMA_VYKTI_NUO_VĖLYVO_PAVASARIO_IKI_RUDENS_KAD_NEBŪTŲ_PATVINĘ));
-                Tnakvynes.add(new word3(R.drawable.orvidusq , ORVIDŲ_SODYBA, PO_TO_11_MIN_VAŽIUOJATE_IKI_ŠAUKLIŲ_RIEDULYNO,R.drawable.saukliusq , ŠAUKLIŲ_RIEDULYNAS, PAVAIKŠČIOJĘ_PO_ŠAUKLIŲ_RIEDULYNĄ_APIE_7_MIN_VAŽIUOJATE_IKI_MOSĖDŽIO));
-                Tnakvynes.add(new word3(R.drawable.akmenumuziejussq , MOSĖDŽIO_AKMENŲ_MUZIEJUS, IŠ_MOSĖDŽIO_VAŽIUOJATE_IKI_APUOLĖS,R.drawable.apuolesq , APUOLĖS_PILIAKALNIS, PO_TO_9_MIN_VAŽIUOJATE_IKI_TRUIKINŲ_ŠALTINIO));
-                Tnakvynes.add(new word3(R.drawable.saltinissq , TRUIKINŲ_ŠALTINIS_ARBA_ŠMITOS_VERSMĖ_HIDROGEOLOGINIS_GAMTOS_PAVELDO_OBJEKTAS, IKI_MAŽEIKIŲ_APIE_47_KM_T_Y_40_MIN_KELIO,R.drawable.mzksq , GRĮŽTATE_Į_MAŽEIKIUS,""));
+                Tnakvynes.add(new word3(R.drawable.mzksq, IŠVYKSTATE_IŠ_MAŽEIKIŲ, VAŽIUOJATE_APIE_50_MIN_IKI_ŠALTOJO_KARO_MUZIEJAUS_PLATELIŲ_SEN_PLUNGĖS_RAJ, R.drawable.saltojoksq, ŠALTOJO_KARO_MUZIEJUS, APLANKĘ_ŠALTOJO_KARO_MUZIEJŲ_VAŽIUOJATE_LINK_SKUODO_APIE_36_MIN_LANKYTINAS_OBJEKTAS_ORVIDŲ_SODYBA, PLUNGĖ_SKUODAS, TRUKMĖ_7_00_VAL_ŠIOS_KELIONĖS_METU_APLANKOTE_ŠALTOJO_KARO_MUZIEJŲ_ORVIDŲ_SODYBĄ_ŠAUKLIŲ_RIEDULYNĄ_MOSĖDŽIO_AKMENŲ_MUZIEJŲ_APUOLĖS_PILIAKALNĮ_TRUIKINŲ_ŠALTINĮ_Į_ŠAUKLIŲ_RIEDULYNĄ_REKOMENDUOJAMA_VYKTI_NUO_VĖLYVO_PAVASARIO_IKI_RUDENS_KAD_NEBŪTŲ_PATVINĘ));
+                Tnakvynes.add(new word3(R.drawable.orvidusq, ORVIDŲ_SODYBA, PO_TO_11_MIN_VAŽIUOJATE_IKI_ŠAUKLIŲ_RIEDULYNO, R.drawable.saukliusq, ŠAUKLIŲ_RIEDULYNAS, PAVAIKŠČIOJĘ_PO_ŠAUKLIŲ_RIEDULYNĄ_APIE_7_MIN_VAŽIUOJATE_IKI_MOSĖDŽIO));
+                Tnakvynes.add(new word3(R.drawable.akmenumuziejussq, MOSĖDŽIO_AKMENŲ_MUZIEJUS, IŠ_MOSĖDŽIO_VAŽIUOJATE_IKI_APUOLĖS, R.drawable.apuolesq, APUOLĖS_PILIAKALNIS, PO_TO_9_MIN_VAŽIUOJATE_IKI_TRUIKINŲ_ŠALTINIO));
+                Tnakvynes.add(new word3(R.drawable.saltinissq, TRUIKINŲ_ŠALTINIS_ARBA_ŠMITOS_VERSMĖ_HIDROGEOLOGINIS_GAMTOS_PAVELDO_OBJEKTAS, IKI_MAŽEIKIŲ_APIE_47_KM_T_Y_40_MIN_KELIO, R.drawable.mzksq, GRĮŽTATE_Į_MAŽEIKIUS, ""));
                 iprieki.setVisibility(View.VISIBLE);
                 skamb();
 
@@ -263,9 +251,9 @@ public class marsrutaugaleru extends AppCompatActivity {
             case 5:
                 atgal.setAnimation(blink);
                 iprieki.setVisibility(View.GONE);
-                Tnakvynes.add(new word3(R.drawable.mzksq , IŠVAŽIUOJATE_IŠ_MAŽEIKIŲ, IKI_KLAIPĖDOS_VAŽIUOJATE_1_VAL_37_MIN,R.drawable.klpzoosq , KLAIPĖDOS_ZOOLOGIJOS_SODAS, PO_TO_VAŽIUOJATE_Į_VENTĘ_APIE_1_VAL, KLAIPĖDA_ŠILUTĖ_PLUNGĖ, TRUKMĖ_9_00_10_00_VAL_ŠIOS_KELIONĖS_METU_APLANKOTE_KLAPĖDOS_ZOOLOGIJOS_SODĄ_VENTĖS_RAGĄ_GALITE_STEBĖTI_ŽIEDUOJAMUS_PAUKŠČIUS_MINIJOS_KAIMĄ_YRA_GALIMYBĖ_PAPLAUKIOTI_VALTIMIS_ŠV_ARKANGELO_MYKOLO_BAŽNYČIĄ_RIETAVE_OGINSKIŲ_DVARO_RŪMUS_PLUNGEJE_NORINT_STEBĖTI_PAUKŠČIŲ_ŽIEDAVIMĄ_Į_VENTĖS_RAGĄ_REKOMENDUOJAMA_VYKTI_ARBA_VĖLYVĄ_PAVASARĮ_ARBA_ANKSTYVĄ_RUDENĮ));
-                Tnakvynes.add(new word3(R.drawable.ventesragassq , VENTĖS_RAGAS_PUSIASALIS_PRIE_KURŠIŲ_MARIŲ_VISAI_NETOLI_NEMUNO_UPĖS_ŽIOČIŲ, APLANKĘ_VENTĖS_RAGĄ_APIE_17_MIN_VAŽIUOJATE_Į_MINIJOS_KAIMĄ,R.drawable.minijosksq , MINIJA_ARBA_MINGĖ_ŽVEJŲ_GATVINIS_KAIMAS_ŠILUTĖS_RAJONO_SAVIVALDYBĖJE_MINIJOS_UPE_TURITE_GALIMYBĘ_IŠPLAUKTI_VALTIMI_Į_KURŠIŲ_MARIAS, IŠ_MINIJOS_VAŽIUOJATE_1VAL_16_MIN_IKI_RIETAVO));
-                Tnakvynes.add(new word3(R.drawable.rietavooginskiobsq , RIETAVAS_ŠV_ARKANGELO_MYKOLO_BAŽNYČIA, IŠ_RIETAVO_VAŽIUOJATE_31_MIN_IKI_PLUNGĖS,R.drawable.orumaisq , OGINSKIŲ_DVARO_RŪMAI_PLUNGĖJE_ČIA_BUVO_PIRMĄ_KARTĄ_LIETUVOJE_UŽDEGTA_ELEKTROS_LEMPUTĖ, GRĮŽIMAS_IŠ_PLUNGĖS_Į_MAŽEIKIUS_UŽTRUNKA_1_VAL));
+                Tnakvynes.add(new word3(R.drawable.mzksq, IŠVAŽIUOJATE_IŠ_MAŽEIKIŲ, IKI_KLAIPĖDOS_VAŽIUOJATE_1_VAL_37_MIN, R.drawable.klpzoosq, KLAIPĖDOS_ZOOLOGIJOS_SODAS, PO_TO_VAŽIUOJATE_Į_VENTĘ_APIE_1_VAL, KLAIPĖDA_ŠILUTĖ_PLUNGĖ, TRUKMĖ_9_00_10_00_VAL_ŠIOS_KELIONĖS_METU_APLANKOTE_KLAPĖDOS_ZOOLOGIJOS_SODĄ_VENTĖS_RAGĄ_GALITE_STEBĖTI_ŽIEDUOJAMUS_PAUKŠČIUS_MINIJOS_KAIMĄ_YRA_GALIMYBĖ_PAPLAUKIOTI_VALTIMIS_ŠV_ARKANGELO_MYKOLO_BAŽNYČIĄ_RIETAVE_OGINSKIŲ_DVARO_RŪMUS_PLUNGEJE_NORINT_STEBĖTI_PAUKŠČIŲ_ŽIEDAVIMĄ_Į_VENTĖS_RAGĄ_REKOMENDUOJAMA_VYKTI_ARBA_VĖLYVĄ_PAVASARĮ_ARBA_ANKSTYVĄ_RUDENĮ));
+                Tnakvynes.add(new word3(R.drawable.ventesragassq, VENTĖS_RAGAS_PUSIASALIS_PRIE_KURŠIŲ_MARIŲ_VISAI_NETOLI_NEMUNO_UPĖS_ŽIOČIŲ, APLANKĘ_VENTĖS_RAGĄ_APIE_17_MIN_VAŽIUOJATE_Į_MINIJOS_KAIMĄ, R.drawable.minijosksq, MINIJA_ARBA_MINGĖ_ŽVEJŲ_GATVINIS_KAIMAS_ŠILUTĖS_RAJONO_SAVIVALDYBĖJE_MINIJOS_UPE_TURITE_GALIMYBĘ_IŠPLAUKTI_VALTIMI_Į_KURŠIŲ_MARIAS, IŠ_MINIJOS_VAŽIUOJATE_1VAL_16_MIN_IKI_RIETAVO));
+                Tnakvynes.add(new word3(R.drawable.rietavooginskiobsq, RIETAVAS_ŠV_ARKANGELO_MYKOLO_BAŽNYČIA, IŠ_RIETAVO_VAŽIUOJATE_31_MIN_IKI_PLUNGĖS, R.drawable.orumaisq, OGINSKIŲ_DVARO_RŪMAI_PLUNGĖJE_ČIA_BUVO_PIRMĄ_KARTĄ_LIETUVOJE_UŽDEGTA_ELEKTROS_LEMPUTĖ, GRĮŽIMAS_IŠ_PLUNGĖS_Į_MAŽEIKIUS_UŽTRUNKA_1_VAL));
                 skamb();
 
                 break;

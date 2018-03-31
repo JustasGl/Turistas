@@ -3,8 +3,8 @@ package com.example.android.turistas;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -16,26 +16,27 @@ public class can_can extends AppCompatActivity {
     public static final String AIDO_G_8_ŠIAULIAI_78322 = "Aido g. 8, Šiauliai 78322";
     public static final String TILŽĖS_G_225_ŠIAULIAI_76200 = "Tilžės g. 225, Šiauliai 76200";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(can_can.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -46,8 +47,8 @@ public class can_can extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_can_can);
 
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,8 +67,8 @@ public class can_can extends AppCompatActivity {
             }
         });
 
-        ImageView adress2 = (ImageView)findViewById(R.id.adreso2);
-        ImageView tel2 = (ImageView)findViewById(R.id.telefono2);
+        ImageView adress2 = (ImageView) findViewById(R.id.adreso2);
+        ImageView tel2 = (ImageView) findViewById(R.id.telefono2);
         adress2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +86,7 @@ public class can_can extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

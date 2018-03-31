@@ -1,117 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.android.turistas.apieapp"
-    android:orientation="vertical"
-    android:layout_marginBottom="32dp">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/top">
-    <ImageView
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:src="@drawable/header"
-    android:scaleType="centerCrop"
-        android:layout_alignParentTop="true"
-        android:id="@+id/header"/>
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Justas Glodenis"
-        android:textColor="#ffffff"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:typeface="normal"
-        android:id="@+id/textView9"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="8dp" />
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/round"
-            android:scaleType="fitCenter"
-            android:id="@+id/profilio"
-            android:layout_marginTop="8dp"
-            android:layout_below="@+id/textView9"
-            android:layout_alignParentStart="true" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Naudotos programos:"
-    android:layout_below="@+id/profilio"
-    android:layout_centerHorizontal="true"/>
-</RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/grafines"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_below="@+id/top"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp">
+    android:layout_height="fill_parent">
 
-    <View
-    android:layout_width="1dp"
-    android:layout_height="150dp"
-    android:background="@color/juoda"
-        android:layout_centerHorizontal="true"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/photoshop"
-            android:layout_centerHorizontal="true"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/android"
-            android:layout_centerInParent="true"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/internet"
-            android:layout_alignParentBottom="true"
-            />
-    </RelativeLayout>
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_alignTop="@+id/grafines"
-        android:layout_toEndOf="@+id/grafines"
-        android:layout_marginStart="30dp">
-        <TextView
-            android:layout_marginTop="8dp"
+       style="@style/matchnmatch"
+        android:layout_marginBottom="@dimen/MarginHuge"
+        android:orientation="vertical"
+        tools:context="com.example.android.turistas.apieapp">
+
+        <RelativeLayout
+            android:id="@+id/top"
+            style="@style/matchnwrap">
+
+            <ImageView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/HeaderAboutApp"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/header" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="@dimen/marginLittle"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+            <TextView
+                android:id="@+id/textView9"
+                style="@style/matchnwrap"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/midmargin"
+                android:text="@string/NameOfCreator"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/TextSizeNameofCreator"
+                android:typeface="normal" />
+
+            <ImageView
+                android:id="@+id/profilio"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/AboutAppCircleImagesize"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView9"
+                android:layout_marginTop="@dimen/midmargin"
+                android:scaleType="fitCenter"
+                android:src="@drawable/round" />
+
+            <TextView
+               style="@style/wrapnwrap"
+                android:layout_below="@+id/profilio"
+                android:layout_centerHorizontal="true"
+                android:text="@string/NaudotosProgramos" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/grafines"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Adobe photoshop"
-            android:layout_centerHorizontal="true"/>
-        <TextView
+            android:layout_height="@dimen/LineOfProgramsHeight"
+            android:layout_below="@+id/top"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/marginmidplus">
+
+            <View
+                android:layout_width="@dimen/seperatorheight"
+                android:layout_height="@dimen/LineOfProgramsHeight"
+                android:layout_centerHorizontal="true"
+                android:background="@color/juoda" />
+
+            <ImageView
+                style="@style/wrapnwrap"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/photoshop" />
+
+            <ImageView
+                style="@style/wrapnwrap"
+                android:layout_centerInParent="true"
+                android:src="@drawable/android" />
+
+            <ImageView
+                style="@style/wrapnwrap"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/internet" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Android Studio"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true" />
-        <TextView
-            android:layout_marginTop="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Internetas"
-            android:layout_alignParentBottom="true"/>
+            android:layout_height="@dimen/LineOfProgramsHeight"
+            android:layout_alignTop="@+id/grafines"
+            android:layout_marginStart="@dimen/MarginOfUsedPrograms"
+            android:layout_toEndOf="@+id/grafines">
+
+            <TextView
+               style="@style/wrapnwrap"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/midmargin"
+                android:text="@string/PhotoShop" />
+
+            <TextView
+               style="@style/wrapnwrap"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/android_studio" />
+
+            <TextView
+                style="@style/wrapnwrap"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/midmargin"
+                android:text="@string/Browser" />
+        </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
-    </ScrollView>
+</ScrollView>

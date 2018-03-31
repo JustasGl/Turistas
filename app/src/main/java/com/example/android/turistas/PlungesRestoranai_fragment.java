@@ -12,13 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class PlungesRestoranai_fragment extends Fragment {
 
 
@@ -28,42 +24,41 @@ public class PlungesRestoranai_fragment extends Fragment {
     public static final String BRAVO_PIZZA = "Bravo Pizza";
     public static final String UŽSUKITE_PLUNGĖJE = "Užsukite Plungėje";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    public PlungesRestoranai_fragment() {
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(getActivity(), R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
     }
-
-    public PlungesRestoranai_fragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        Toolbar myToolbar = (Toolbar)rootView.findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) rootView.findViewById(R.id.my_toolbar);
         myToolbar.setVisibility(View.GONE);
 
         final ArrayList<word> Prestoranai = new ArrayList<word>();
@@ -74,7 +69,7 @@ public class PlungesRestoranai_fragment extends Fragment {
         Prestoranai.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(getActivity(), Prestoranai);
-        ListView Listtranslated = (ListView)rootView.findViewById(R.id.list);
+        ListView Listtranslated = (ListView) rootView.findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -82,7 +77,7 @@ public class PlungesRestoranai_fragment extends Fragment {
 
                 word listas = Prestoranai.get(position);
 
-                switch (position){
+                switch (position) {
                     case 1:
                         skamb();
                         Intent intent = new Intent(getActivity(), virginijauspicerija.class);

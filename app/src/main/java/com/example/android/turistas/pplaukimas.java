@@ -3,8 +3,8 @@ package com.example.android.turistas;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -19,55 +19,57 @@ public class pplaukimas extends AppCompatActivity {
     public static final String I_KONČIAUS_G_3_PLUNGĖ = "I. Končiaus g. 3, Plungė";
     public static final String HOTEL_PORTO_PLUNGĖ = "hotel porto plungė";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(pplaukimas.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pplaukimas);
 
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
 
-        ImageView adress1 = (ImageView)findViewById(R.id.adreso1);
-        ImageView tel1 = (ImageView)findViewById(R.id.telefono1);
+        ImageView adress1 = (ImageView) findViewById(R.id.adreso1);
+        ImageView tel1 = (ImageView) findViewById(R.id.telefono1);
 
-        ImageView adress2 = (ImageView)findViewById(R.id.adreso2);
-        ImageView tel2 = (ImageView)findViewById(R.id.telefono2);
+        ImageView adress2 = (ImageView) findViewById(R.id.adreso2);
+        ImageView tel2 = (ImageView) findViewById(R.id.telefono2);
 
-        ImageView adress3 = (ImageView)findViewById(R.id.adreso3);
-        ImageView tel3 = (ImageView)findViewById(R.id.telefono3);
-        ImageView tel4 = (ImageView)findViewById(R.id.telefono4);
+        ImageView adress3 = (ImageView) findViewById(R.id.adreso3);
+        ImageView tel3 = (ImageView) findViewById(R.id.telefono3);
+        ImageView tel4 = (ImageView) findViewById(R.id.telefono4);
 
-        ImageView adress4 = (ImageView)findViewById(R.id.adreso4);
-        ImageView tel5 = (ImageView)findViewById(R.id.telefono5);
-        ImageView tel6 = (ImageView)findViewById(R.id.telefono6);
+        ImageView adress4 = (ImageView) findViewById(R.id.adreso4);
+        ImageView tel5 = (ImageView) findViewById(R.id.telefono5);
+        ImageView tel6 = (ImageView) findViewById(R.id.telefono6);
 
-        ImageView adress5 = (ImageView)findViewById(R.id.adreso5);
-        ImageView tel7 = (ImageView)findViewById(R.id.telefono7);
-        ImageView tel8 = (ImageView)findViewById(R.id.telefono8);
+        ImageView adress5 = (ImageView) findViewById(R.id.adreso5);
+        ImageView tel7 = (ImageView) findViewById(R.id.telefono7);
+        ImageView tel8 = (ImageView) findViewById(R.id.telefono8);
 
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,35 +162,35 @@ public class pplaukimas extends AppCompatActivity {
             }
         });
         adress4.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            skamb();
-            String str_location = RIETAVO_G_16_PLUNGĖ;
-            String map = HTTP_MAPS_GOOGLE_CO_IN_MAPS_Q + str_location;
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(map));
-            startActivity(i);
-        }
-    });
+            @Override
+            public void onClick(View view) {
+                skamb();
+                String str_location = RIETAVO_G_16_PLUNGĖ;
+                String map = HTTP_MAPS_GOOGLE_CO_IN_MAPS_Q + str_location;
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(map));
+                startActivity(i);
+            }
+        });
         tel5.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            skamb();
-            String phone = "+370 682 67 065";
-            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(TEL, phone, null));
-            startActivity(intent);
+            @Override
+            public void onClick(View view) {
+                skamb();
+                String phone = "+370 682 67 065";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(TEL, phone, null));
+                startActivity(intent);
 
-        }
-    });
+            }
+        });
         tel6.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            skamb();
-            String phone = "+370 448 71 181";
-            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(TEL, phone, null));
-            startActivity(intent);
+            @Override
+            public void onClick(View view) {
+                skamb();
+                String phone = "+370 448 71 181";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(TEL, phone, null));
+                startActivity(intent);
 
-        }
-    });
+            }
+        });
         adress5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -219,7 +221,7 @@ public class pplaukimas extends AppCompatActivity {
 
             }
         });
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

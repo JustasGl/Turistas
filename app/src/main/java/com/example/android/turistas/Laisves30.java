@@ -1,27 +1,22 @@
 package com.example.android.turistas;
 
 
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
-public class Laisves30 extends FragmentActivity implements OnPageChangeListener  {
+public class Laisves30 extends FragmentActivity implements OnPageChangeListener {
 
     public static final String LAISVES_30 = "laisves30";
     public static final String HTTPS_WWW_GOOGLE_COM_SEARCH_CLIENT_FIREFOX_B_Q_LAISV_C4_97S_30_MA_C5_BEEIKIUOSE_SPELL_1_SA_X_VED_0AH_UKEWJD3SJ_FW6_PXAH_WS_FJO_KHWT_BBZ0_QVW_UIIYG_A_BIW_1920_BIH_971_GFE_RD_CR_DCR_0_EI_L_F8_WC7_LES_KAT_AGKOA7O_AW = "https://www.google.com/search?client=firefox-b&q=Laisv%C4%97s+30+Ma%C5%BEeikiuose&spell=1&sa=X&ved=0ahUKEwjd3sjFw6PXAhWsFJoKHWtBBz0QvwUIIygA&biw=1920&bih=971&gfe_rd=cr&dcr=0&ei=l_f8Wc7LEsKAtAGKoa7oAw";
@@ -37,26 +32,27 @@ public class Laisves30 extends FragmentActivity implements OnPageChangeListener 
     private ArrayList<Integer> itemData;
     private FragmentPagerAdapter adapter;
     private Images imageId;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(Laisves30.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -66,14 +62,13 @@ public class Laisves30 extends FragmentActivity implements OnPageChangeListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laisves30);
-        boolean ar=getIntent().getBooleanExtra(ARNAKVYNE, false);
-        if (!ar)
-        {
-            RelativeLayout rl =(RelativeLayout)findViewById(R.id.relative);
+        boolean ar = getIntent().getBooleanExtra(ARNAKVYNE, false);
+        if (!ar) {
+            RelativeLayout rl = (RelativeLayout) findViewById(R.id.relative);
             rl.setVisibility(View.GONE);
         }
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,7 +90,7 @@ public class Laisves30 extends FragmentActivity implements OnPageChangeListener 
         });
 
 
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +116,7 @@ public class Laisves30 extends FragmentActivity implements OnPageChangeListener 
 
         dots = new ImageView[totalImage];
 
-        for(int i = 0; i < totalImage; i++){
+        for (int i = 0; i < totalImage; i++) {
 
             dots[i] = new ImageView(Laisves30.this);
             dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
@@ -138,15 +133,11 @@ public class Laisves30 extends FragmentActivity implements OnPageChangeListener 
     @Override
     public void onPageScrollStateChanged(int arg0) {
         dots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
-        if (position==0)
-        {
+        if (position == 0) {
             dots[position + 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-        }
-        else if (position==totalImage-1)
-        {
+        } else if (position == totalImage - 1) {
             dots[position - 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-        }
-        else if(position!=totalImage){
+        } else if (position != totalImage) {
             dots[position - 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
             dots[position + 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
         }

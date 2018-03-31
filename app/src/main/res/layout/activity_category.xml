@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <ImageView
-    android:layout_width="1dp"
-        android:layout_height="1dp"
         android:id="@+id/fkimg"
-        >
-    </ImageView>
-    </LinearLayout>
+        android:layout_width="@dimen/dp1"
+        android:layout_height="@dimen/dp1" />
+</LinearLayout>

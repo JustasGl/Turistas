@@ -2,22 +2,16 @@ package com.example.android.turistas;
 
 
 import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -37,23 +31,23 @@ public class MazeikiuRestoranai_fragmentas extends Fragment {
     public static final String ARKOS = "Arkos";
     public static final String PEKINAS = "Pekinas";
     public static final String UŽSUKITE_MAŽEIKIUOSE = "Užsukite Mažeikiuose";
-
-    public MazeikiuRestoranai_fragmentas() {
-    }
-
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    public MazeikiuRestoranai_fragmentas() {
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
@@ -67,12 +61,12 @@ public class MazeikiuRestoranai_fragmentas extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        Toolbar myToolbar = (Toolbar)rootView.findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) rootView.findViewById(R.id.my_toolbar);
         myToolbar.setVisibility(View.GONE);
         final ArrayList<word> Mrestoranai = new ArrayList<word>();
         Mrestoranai.add(new word(R.drawable.mazeikiu_restoranai, UŽSUKITE_MAŽEIKIUOSE));
         Mrestoranai.add(new word(R.drawable.pekinas, PEKINAS));
-       Mrestoranai.add(new word(R.drawable.arkos, ARKOS));
+        Mrestoranai.add(new word(R.drawable.arkos, ARKOS));
         Mrestoranai.add(new word(R.drawable.haochi, HAO_CHI));
         Mrestoranai.add(new word(R.drawable.laisves30, LAISVĖS_30));
         Mrestoranai.add(new word(R.drawable.roala, ROALA));
@@ -84,14 +78,14 @@ public class MazeikiuRestoranai_fragmentas extends Fragment {
         Mrestoranai.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(getActivity(), Mrestoranai);
-        ListView Listtranslated = (ListView)rootView.findViewById(R.id.list);
+        ListView Listtranslated = (ListView) rootView.findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
 
-                switch (position){
+                switch (position) {
                     case 1:
                         mMediaPlayer = MediaPlayer.create(getActivity(), R.raw.garsas);
                         mMediaPlayer.start();
@@ -157,8 +151,7 @@ public class MazeikiuRestoranai_fragmentas extends Fragment {
         return rootView;
     }
 
-    private void skamb ()
-    {
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(getActivity(), R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);

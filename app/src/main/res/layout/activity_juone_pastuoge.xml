@@ -1,123 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.android.turistas.juone_pastuoge"
-        android:orientation="vertical">
+        style="@style/matchnmatch"
+        android:orientation="vertical"
+        tools:context="com.example.android.turistas.airovita">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Juone pastuogė"
-            android:textSize="55sp"
-            android:textAlignment="center"/>
+            style="@style/InfoTitle"
+            android:text="@string/JuonePastuogeTitle"
+            />
+
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            style="@style/InfoSeperator" />
+
         <TextView
-            android:layout_marginLeft="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Išalkote? Pasiilgote jaukių vakarų? Norite pasiklausyti gyvos muzikos? O gal pabodo miesto šurmulys? Kavinė - smuklė „Juonė pastuogė“ - atgaiva skrandžiui, kojoms ir sielai!!!Tai tikra vienkiemio idilija Šiaulių miesto viduryje, kur vakarais skamba gyva muzika."
-            android:textSize="16dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/juoda"/>
+            style="@style/InfoDescription"
+            android:text="@string/JuonePastuogeDescription"
+            />
+
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            style="@style/InfoSeperator"/>
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kontaktai"
-            android:textSize="32dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="8dp"/>
+            style="@style/InfoKontaktaiGrafa"
+            android:text="@string/kontaktai"
+            />
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/matchnwrap"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_weight="1"
-                android:text="Tel. nr. (8-41) 524926"
-                android:textColor="@color/juoda"
-                android:textSize="16dp" />
+                android:text="@string/JuonePastuogeTelNR"
+                style="@style/InfoTelNr" />
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Adresas: Aušros al. 31, Šiauliai 76300"
-                android:textSize="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColor="@color/juoda"
-                android:layout_weight="1"/>
+                android:text="@string/JuonePastuogeAddres"
+                style="@style/InfoKontaktai" />
         </LinearLayout>
+
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            style="@style/InfoSeperator"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/telnr"
-                android:layout_weight="1"
                 android:id="@+id/telefono"
-                android:background="?attr/selectableItemBackground"/>
+                style="@style/InfoTelPic" />
+
             <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/skyriklis"/>
+                style="@style/InfoVerticalSkyriklis" />
+
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/adresas"
-                android:layout_weight="1"
                 android:id="@+id/adreso"
-                android:background="?attr/selectableItemBackground"/>
+                style="@style/InfoMapPic" />
         </LinearLayout>
+
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/matchnwrap"
             android:foreground="?attr/selectableItemBackground">
+
             <ImageView
                 android:id="@+id/google"
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:background="#ed5564"
-                android:scaleType="fitCenter"
-                android:src="@drawable/gsearch"
-                android:foreground="?attr/selectableItemBackground"/>
+                style="@style/InfoMoreButton"/>
         </FrameLayout>
     </LinearLayout>
 </ScrollView>

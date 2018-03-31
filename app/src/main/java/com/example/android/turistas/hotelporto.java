@@ -1,23 +1,21 @@
 package com.example.android.turistas;
 
 
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-public class hotelporto extends FragmentActivity implements OnPageChangeListener  {
+public class hotelporto extends FragmentActivity implements OnPageChangeListener {
 
     public static final String PORTO = "porto";
     public static final String HTTPS_WWW_GOOGLE_COM_SEARCH_CLIENT_FIREFOX_B_BIW_1920_BIH_971_EI_YW_T9_WAM_NCYEYA7NAO8_AJ_Q_HOTEL_PORTO_PLUNG_C4_97_OQ_HOTEL_PORTO_PLUNG_C4_97_GS_L_PSY_AB_3_0I71K1L4_2740_2743_0_2835_0_0_0_0_0_0_0_0_0_0_0_1_1_64_PSY_AB_0_0_0_0_1H_AM3HYA_PO_GFE_RD_CR_DCR_0 = "https://www.google.com/search?client=firefox-b&biw=1920&bih=971&ei=YwT9WamNCYeya7nao8AJ&q=Hotel+Porto+Plung%C4%97&oq=Hotel+Porto+Plung%C4%97&gs_l=psy-ab.3..0i71k1l4.2740.2743.0.2835.0.0.0.0.0.0.0.0..0.0....0...1.1.64.psy-ab..0.0.0....0.-1hAM3hyaPo&gfe_rd=cr&dcr=0";
@@ -34,25 +32,27 @@ public class hotelporto extends FragmentActivity implements OnPageChangeListener
     private FragmentPagerAdapter adapter;
     private Images imageId;
     private ViewPager mPager;
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(hotelporto.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -64,8 +64,8 @@ public class hotelporto extends FragmentActivity implements OnPageChangeListener
         setContentView(R.layout.activity_hotelporto);
 
 
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +85,7 @@ public class hotelporto extends FragmentActivity implements OnPageChangeListener
                 startActivity(intent);
             }
         });
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +110,7 @@ public class hotelporto extends FragmentActivity implements OnPageChangeListener
 
         dots = new ImageView[totalImage];
 
-        for(int i = 0; i < totalImage; i++){
+        for (int i = 0; i < totalImage; i++) {
 
             dots[i] = new ImageView(hotelporto.this);
             dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
@@ -127,15 +127,11 @@ public class hotelporto extends FragmentActivity implements OnPageChangeListener
     @Override
     public void onPageScrollStateChanged(int arg0) {
         dots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
-        if (position==0)
-        {
+        if (position == 0) {
             dots[position + 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-        }
-        else if (position==totalImage-1)
-        {
+        } else if (position == totalImage - 1) {
             dots[position - 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-        }
-        else if(position!=totalImage){
+        } else if (position != totalImage) {
             dots[position - 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
             dots[position + 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
         }

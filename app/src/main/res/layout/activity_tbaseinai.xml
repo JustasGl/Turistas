@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.android.turistas.tbaseinai"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context="com.example.android.turistas.tbaseinai">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mokyklos baseinas"
-            android:textSize="50sp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="50sp" />
 
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            android:layout_margin="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/skyriklis" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kontaktai"
-            android:textSize="32dp"
-            android:textAlignment="center"
             android:layout_marginBottom="16dp"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:text="Kontaktai"
+            android:textAlignment="center"
+            android:textSize="32dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_marginLeft="8dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Tel. nr.  (8-444) 78488"
-                android:textSize="16dp"
                 android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:text="Tel. nr.  (8-444) 78488"
                 android:textColor="@color/juoda"
-                android:layout_weight="1"/>
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -61,48 +61,55 @@
                 android:textColor="@color/juoda"
                 android:textSize="16dp" />
         </LinearLayout>
+
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            android:layout_margin="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/skyriklis" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
+                android:id="@+id/telefono"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/telnr"
                 android:layout_weight="1"
-                android:id="@+id/telefono"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/telnr" />
+
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/skyriklis"/>
+                android:background="@color/skyriklis" />
+
             <ImageView
+                android:id="@+id/adreso"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/adresas"
                 android:layout_weight="1"
-                android:id="@+id/adreso"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/adresas" />
         </LinearLayout>
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground">
+
             <ImageView
                 android:id="@+id/google"
-                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="104dp"
+                android:layout_marginTop="16dp"
                 android:background="#ed5564"
+                android:foreground="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
-                android:src="@drawable/gsearch"
-                android:foreground="?attr/selectableItemBackground"/>
+                android:src="@drawable/gsearch" />
         </FrameLayout>
     </LinearLayout>
 </ScrollView>

@@ -1,11 +1,8 @@
-
 package com.example.android.turistas;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -18,23 +15,20 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.android.turistas.R;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
-
 public class Restoranai extends AppCompatActivity {
     public static final String BRAUKIAME_Į_ŠONĄ_NORĖDAMI_PAMATYTI_KITŲ_MIESTŲ_MAITINIMO_ĮSTAIGAS = "Braukiame į šoną norėdami pamatyti kitų miestų maitinimo įstaigas";
     public static final String ARTAIMOKYMAI = "ARTAIMOKYMAI";
     boolean i;
-    int a=0;
+    int a = 0;
     ImageView fng;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restoranai);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-         WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         i = getIntent().getBooleanExtra(ARTAIMOKYMAI, false);
         fng = (ImageView) findViewById(R.id.finger);
@@ -57,7 +51,8 @@ public class Restoranai extends AppCompatActivity {
         toolbar();
 
     }
-    private void move () {
+
+    private void move() {
         TranslateAnimation cloud_moving = new TranslateAnimation(
                 Animation.ABSOLUTE, 1450,
                 Animation.ABSOLUTE, 10,
@@ -84,8 +79,7 @@ public class Restoranai extends AppCompatActivity {
             @Override
             public void onAnimationRepeat(Animation animation) {
                 a++;
-                if (a==5)
-                {
+                if (a == 5) {
                     fng.setVisibility(View.GONE);
                     Intent intent = new Intent(Restoranai.this, TelsiuRestoranai.class);
 
@@ -94,13 +88,13 @@ public class Restoranai extends AppCompatActivity {
             }
         });
     }
-    private void toolbar ()
-    {
+
+    private void toolbar() {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         Toolbar myChildToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myChildToolbar);
-        ImageView profil =(ImageView)findViewById(R.id.profilio);
+        ImageView profil = (ImageView) findViewById(R.id.profilio);
         ActionBar ab = getSupportActionBar();
 
         ab.setDisplayHomeAsUpEnabled(true);

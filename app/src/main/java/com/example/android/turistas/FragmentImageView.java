@@ -13,9 +13,9 @@ import android.widget.ImageView;
 
 public class FragmentImageView extends Fragment {
 
+    public ProgressDialog pd;
     private Integer itemData;
     private Bitmap myBitmap;
-    public ProgressDialog pd;
     private ImageView ivImage;
 
     public static FragmentImageView newInstance() {

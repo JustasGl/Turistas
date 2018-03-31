@@ -1,13 +1,7 @@
 package com.example.android.turistas;
 
-import android.content.Intent;
-import android.content.res.Resources;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
-
-import static junit.runner.Version.id;
 
 
 public class Images {
@@ -339,7 +333,6 @@ public class Images {
                 break;
         }
     }
-
 
 
     public int getImageId() {

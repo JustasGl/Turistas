@@ -1,119 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.android.turistas.antkalno"
-        android:orientation="vertical">
+    android:layout_height="fill_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/matchnmatch"
+        android:orientation="vertical"
+        tools:context="com.example.android.turistas.airovita">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ant kalno"
-            android:textSize="60sp"
-            android:textAlignment="center"/>
+            style="@style/InfoTitle"
+            android:text="@string/ant_kalnoTitle"
+            />
+
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            style="@style/InfoSeperator" />
+
         <TextView
-            android:layout_marginLeft="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Žemaitijos sostinėje - Telšiuose įsikūrusi kavinė „Ant kalno“ laukia Jūsų! Čia maloniai ir linksmai praleisti laiką jaukioje aplinkoje, paskanausite gardžių patiekalų ir pasilepinsite desertais. Kavinė siūlo platų įvairių gėrimų, užkandžių, salotų, karštų patiekalų bei desertu asortimentą.Nežinote ko paskanauti? Visada Jums pagelbės aptarnaujantis personalas."
-            android:textSize="16dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/juoda"/>
+            style="@style/InfoDescription"
+            android:text="@string/AntKalnoDescription"
+            />
+
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            style="@style/InfoSeperator"/>
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kontaktai"
-            android:textSize="32dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="8dp"/>
+            style="@style/InfoKontaktaiGrafa"
+            android:text="@string/kontaktai"
+            />
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/matchnwrap"
             android:orientation="horizontal">
-            <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Tel. nr. (8-444) 76016"
-                android:textSize="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColor="@color/juoda"
-                android:layout_weight="1"/>
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Kalno g. 18, Telšiai 87133"
-                android:textSize="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColor="@color/juoda"
-                android:layout_weight="1"/>
+                android:text="@string/AntKalnoTelNR"
+                style="@style/InfoTelNr" />
+
+            <TextView
+                android:text="@string/AntKalnoAdress"
+                style="@style/InfoKontaktai" />
         </LinearLayout>
+
         <View
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/skyriklis"
-            android:layout_marginBottom="8dp"/>
+            style="@style/InfoSeperator"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/telnr"
-                android:layout_weight="1"
                 android:id="@+id/telefono"
-                android:background="?attr/selectableItemBackground"/>
+                style="@style/InfoTelPic" />
+
             <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/skyriklis"/>
+                style="@style/InfoVerticalSkyriklis" />
+
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/adresas"
-                android:layout_weight="1"
                 android:id="@+id/adreso"
-                android:background="?attr/selectableItemBackground"/>
+                style="@style/InfoMapPic" />
         </LinearLayout>
+
+        <View
+            style="@style/InfoSeperator" />
+
+        <RelativeLayout
+            style="@style/matchnwrap">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                style="@style/InfoImageSlider" />
+
+            <LinearLayout
+                android:id="@+id/SliderDots"
+                style="@style/ImageDots" />
+        </RelativeLayout>
+
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/matchnwrap"
             android:foreground="?attr/selectableItemBackground">
+
             <ImageView
                 android:id="@+id/google"
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:background="#ed5564"
-                android:scaleType="fitCenter"
-                android:src="@drawable/gsearch"
-                android:foreground="?attr/selectableItemBackground"/>
+                style="@style/InfoMoreButton"/>
         </FrameLayout>
     </LinearLayout>
 </ScrollView>

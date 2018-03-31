@@ -5,14 +5,13 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -28,26 +27,27 @@ public class Nakvynes extends AppCompatActivity {
     public static final String TELŠIAI = "Telšiai";
     public static final String MAŽEIKIAI = "Mažeikiai";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(Nakvynes.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -81,7 +81,7 @@ public class Nakvynes extends AppCompatActivity {
         visosNakvynes.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(Nakvynes.this, visosNakvynes);
-        ListView Listtranslated = (ListView)findViewById(R.id.list);
+        ListView Listtranslated = (ListView) findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -91,42 +91,42 @@ public class Nakvynes extends AppCompatActivity {
 
                 switch (position) {
                     case 0:
-                        skamb ();
+                        skamb();
                         Intent intent = new Intent(Nakvynes.this, MazeikiuNakvynes.class);
                         startActivity(intent);
                         break;
                     case 1:
-                        skamb ();
+                        skamb();
                         Intent intentas = new Intent(Nakvynes.this, TelsiuNakvynes.class);
                         startActivity(intentas);
                         break;
                     case 2:
-                        skamb ();
+                        skamb();
                         Intent intentas1 = new Intent(Nakvynes.this, SiauliuNakvynes.class);
                         startActivity(intentas1);
                         break;
                     case 3:
-                        skamb ();
+                        skamb();
                         Intent intentas2 = new Intent(Nakvynes.this, TauragesNakvynes.class);
                         startActivity(intentas2);
                         break;
                     case 4:
-                        skamb ();
+                        skamb();
                         Intent intentas3 = new Intent(Nakvynes.this, PlungesNakvynes.class);
                         startActivity(intentas3);
                         break;
                     case 5:
-                        skamb ();
+                        skamb();
                         Intent intentas4 = new Intent(Nakvynes.this, KretingosNakvynes.class);
                         startActivity(intentas4);
                         break;
                     case 6:
-                        skamb ();
+                        skamb();
                         Intent intentas5 = new Intent(Nakvynes.this, SkuodoNakvynes.class);
                         startActivity(intentas5);
                         break;
                     case 7:
-                        skamb ();
+                        skamb();
                         String daugiau = HTTPS_WWW_TURIZMAS_LT_PAIESKA_NAKVYN_C4_97_C5_BDEMAITIJOJE;
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                         startActivity(i);

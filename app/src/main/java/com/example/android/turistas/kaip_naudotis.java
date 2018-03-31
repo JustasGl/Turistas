@@ -1,7 +1,7 @@
 package com.example.android.turistas;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class kaip_naudotis extends AppCompatActivity {
 

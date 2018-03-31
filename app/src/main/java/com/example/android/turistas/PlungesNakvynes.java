@@ -5,9 +5,9 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
@@ -24,26 +24,27 @@ public class PlungesNakvynes extends AppCompatActivity {
     public static final String NG_APARTMENTS = "NG Apartments ";
     public static final String TOP_3_VIEŠBUČIŲ = "Top 3 Viešbučių";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(PlungesNakvynes.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -75,32 +76,31 @@ public class PlungesNakvynes extends AppCompatActivity {
         Pnakvynes.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(PlungesNakvynes.this, Pnakvynes);
-        ListView Listtranslated = (ListView)findViewById(R.id.list);
+        ListView Listtranslated = (ListView) findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                word listas = Pnakvynes.get(position);
 
-                switch (position){
+                switch (position) {
                     case 1:
-                        skamb ();
+                        skamb();
                         Intent intent = new Intent(PlungesNakvynes.this, ngapartments.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        skamb ();
+                        skamb();
                         Intent intentas = new Intent(PlungesNakvynes.this, kristapartments.class);
                         startActivity(intentas);
                         break;
                     case 3:
-                        skamb ();
+                        skamb();
                         Intent intentas1 = new Intent(PlungesNakvynes.this, hotelporto.class);
                         startActivity(intentas1);
                         break;
                     case 4:
-                        skamb ();
+                        skamb();
                         String daugiau = HTTPS_WWW_GOOGLE_LT_SEARCH_RLZ_1_C1_CHBF_EN_LT747_LT747_EI_SMZ8_WBEV_IU_KN6_ASC_7Y4_DA_Q_NAKVYN_C4_97S_PLUNG_C4_97JE_OQ_NAKVYN_C4_97S_PLUNG_C4_97JE_GS_L_PSY_AB_3_0I13I30K1J0I22I30K1L2J0I13I5I30K1J0I8I13I30K1L3_12131_14963_0_15379_8_8_0_0_0_0_76_503_8_8_0_0_1_1_64_PSY_AB_0_8_503_0_TMZ_BCYIE_U0_U;
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                         startActivity(i);

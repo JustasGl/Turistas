@@ -1,5 +1,4 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,20 +9,21 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
+        style="@style/stroke"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:elevation="4dp"
-        style="@style/stroke"
         android:theme="@style/ToolBarStyle" />
+
     <ImageView
+        android:id="@+id/finger"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/finger"
-        tools:background="#000"
-        android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/finger"
-        />
+        android:layout_centerVertical="true"
+        android:src="@drawable/finger"
+        tools:background="#000" />
 </RelativeLayout>

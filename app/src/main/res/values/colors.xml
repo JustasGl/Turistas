@@ -10,4 +10,10 @@
     <color name="black_overlay">#66000000</color>
     <color name="gray">#565656</color>
     <color name="coloroftoolbar">#00ffffff</color>
+    <color name="backgroundofMoreButton">#ed5564</color>
+    <color name="GaleryTitleColor">#caffffff</color>
+    <color name="GaleryMapButtonColor">#3498db</color>
+    <color name="MainActivityTitleBacground">#87000000</color>
+    <color name="MainActivityTitlecolor">#e7ffffff</color>
+
 </resources>

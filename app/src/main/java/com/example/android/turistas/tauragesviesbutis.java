@@ -1,24 +1,21 @@
 package com.example.android.turistas;
 
 
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
-public class tauragesviesbutis extends FragmentActivity implements OnPageChangeListener  {
+public class tauragesviesbutis extends FragmentActivity implements OnPageChangeListener {
 
     public static final String TAURAGESVIESBUTIS = "tauragesviesbutis";
     public static final String HTTPS_WWW_GOOGLE_COM_SEARCH_CLIENT_FIREFOX_B_Q_TAURAG_C4_97S_VIE_C5_A1BUTIS_SPELL_1_SA_X_VED_0AH_UKEWJ42_IJ_WZQ_PXAH_VFF_RO_KHCP_TC38_QBQGJ_KAA_BIW_1920_BIH_971_GFE_RD_CR_DCR_0_EI_RAP9_WYN_CAD_WDT_AHZ7Q7_YBA = "https://www.google.com/search?client=firefox-b&q=Taurag%C4%97s+Vie%C5%A1butis&spell=1&sa=X&ved=0ahUKEwj42IjWzqPXAhVFfRoKHcpTC38QBQgjKAA&biw=1920&bih=971&gfe_rd=cr&dcr=0&ei=RAP9WYnCAdWDtAHZ7q7YBA";
@@ -33,25 +30,27 @@ public class tauragesviesbutis extends FragmentActivity implements OnPageChangeL
     private ArrayList<Integer> itemData;
     private FragmentPagerAdapter adapter;
     private Images imageId;
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(tauragesviesbutis.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -62,12 +61,12 @@ public class tauragesviesbutis extends FragmentActivity implements OnPageChangeL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tauragesviesbutis);
 
-        ImageView adress = (ImageView)findViewById(R.id.adreso);
-        ImageView tel = (ImageView)findViewById(R.id.telefono);
+        ImageView adress = (ImageView) findViewById(R.id.adreso);
+        ImageView tel = (ImageView) findViewById(R.id.telefono);
         adress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                skamb ();
+                skamb();
                 String str_location = VYTAUTO_G_83_TAURAGĖ_72215;
                 String map = HTTP_MAPS_GOOGLE_CO_IN_MAPS_Q + str_location;
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(map));
@@ -77,18 +76,18 @@ public class tauragesviesbutis extends FragmentActivity implements OnPageChangeL
         tel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                skamb ();
+                skamb();
                 String phone = "(8-655) 55554";
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(TEL, phone, null));
                 startActivity(intent);
             }
         });
 
-        ImageView googlesearch = (ImageView)findViewById(R.id.google);
+        ImageView googlesearch = (ImageView) findViewById(R.id.google);
         googlesearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                skamb ();
+                skamb();
                 String daugiau = HTTPS_WWW_GOOGLE_COM_SEARCH_CLIENT_FIREFOX_B_Q_TAURAG_C4_97S_VIE_C5_A1BUTIS_SPELL_1_SA_X_VED_0AH_UKEWJ42_IJ_WZQ_PXAH_VFF_RO_KHCP_TC38_QBQGJ_KAA_BIW_1920_BIH_971_GFE_RD_CR_DCR_0_EI_RAP9_WYN_CAD_WDT_AHZ7Q7_YBA;
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                 startActivity(i);
@@ -109,7 +108,7 @@ public class tauragesviesbutis extends FragmentActivity implements OnPageChangeL
 
         dots = new ImageView[totalImage];
 
-        for(int i = 0; i < totalImage; i++){
+        for (int i = 0; i < totalImage; i++) {
 
             dots[i] = new ImageView(tauragesviesbutis.this);
             dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
@@ -126,15 +125,11 @@ public class tauragesviesbutis extends FragmentActivity implements OnPageChangeL
     @Override
     public void onPageScrollStateChanged(int arg0) {
         dots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
-        if (position==0)
-        {
+        if (position == 0) {
             dots[position + 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-        }
-        else if (position==totalImage-1)
-        {
+        } else if (position == totalImage - 1) {
             dots[position - 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-        }
-        else if(position!=totalImage){
+        } else if (position != totalImage) {
             dots[position - 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
             dots[position + 1].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
         }

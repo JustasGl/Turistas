@@ -4,14 +4,16 @@
     <item
         android:id="@+id/info"
         android:icon="@drawable/info"
-        android:title="Kaip Naudotis?"
-        app:showAsAction="always"/>
+        android:title="@string/kaip_naudotis"
+        app:showAsAction="always" />
 
-    <item android:id="@+id/settings"
-        android:title="Apie aplikaciją"
-        app:showAsAction="never"/>
+    <item
+        android:id="@+id/settings"
+        android:title="@string/naudotos_programos"
+        app:showAsAction="never" />
 
-    <item android:id="@+id/kaip"
-        android:title="Kaip naudotis?"
-        app:showAsAction="never"/>
+    <item
+        android:id="@+id/kaip"
+        android:title="@string/kaip_naudotis"
+        app:showAsAction="never" />
 </menu>

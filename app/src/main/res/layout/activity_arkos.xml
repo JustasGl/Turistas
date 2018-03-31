@@ -1,145 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.android.turistas.arkos"
-    android:orientation="vertical">
+    android:layout_height="fill_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Arkos"
-        android:textSize="60sp"
-        android:textAlignment="center"/>
-    <View
-        android:layout_margin="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/skyriklis"
-        android:layout_marginBottom="8dp"/>
-    <TextView
-        android:layout_marginLeft="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Svečių numeriuose rasite palydovinius kanalus rodančius televizorius, kavos virimo aparatus, vonias arba dušus, nemokamus higienos reikmenis ir rašomuosius stalus. Visuose numeriuose yra vonios kambariai su plaukų džiovintuvais, o kai kuriuose – svetainės zonos. Juose taip pat rasite drabužių spintas ir virdulius. Visada rasite karštus ir skanius dienos pietus. Taip pat yra organizuojami banketai, furšetai, vestuvės, krikštynos ir jubiliejų šventės. Savaitgaliais jūsų laukia visada linksmi ir smagūs muzikiniai vakarai."
-        android:textSize="16dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/juoda"/>
-    <View
-        android:layout_margin="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/skyriklis"
-        android:layout_marginBottom="8dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kontaktai"
-        android:textSize="32dp"
-        android:textAlignment="center"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="8dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_marginLeft="8dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Tel. nr. 8-646-02057"
-            android:textSize="16dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/juoda"
-            android:layout_weight="1"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/matchnmatch"
+        android:orientation="vertical"
+        tools:context="com.example.android.turistas.airovita">
 
         <TextView
-            android:layout_marginLeft="8dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Adresas:  Gamyklos gatvė 41, Mažeikiai"
-            android:textSize="16dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/juoda"
-            android:layout_weight="1"/>
-    </LinearLayout>
-    <View
-        android:layout_margin="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/skyriklis"
-        android:layout_marginBottom="8dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/telnr"
-            android:layout_weight="1"
-            android:id="@+id/telefono"
-            android:background="?attr/selectableItemBackground"/>
+            style="@style/InfoTitle"
+            android:text="@string/MazeikiaiArkosTitle"
+            />
+
         <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/skyriklis"/>
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/adresas"
-            android:layout_weight="1"
-            android:id="@+id/adreso"
-            android:background="?attr/selectableItemBackground"/>
-    </LinearLayout>
-    <View
-        android:layout_margin="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/skyriklis" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/relative">
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="480dp"
-        android:layout_alignParentTop="true" />
-    <LinearLayout
-        android:id="@+id/SliderDots"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:gravity="center_vertical|center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="4dp"/>
-    </RelativeLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:foreground="?attr/selectableItemBackground">
-        <ImageView
-            android:id="@+id/google"
-            android:layout_marginTop="16dp"
+            style="@style/InfoSeperator" />
+
+        <TextView
+            style="@style/InfoDescription"
+            android:text="@string/MazeikiaiArkosDescription"
+            />
+
+        <View
+            style="@style/InfoSeperator"/>
+
+        <TextView
+            style="@style/InfoKontaktaiGrafa"
+            android:text="@string/kontaktai"
+            />
+
+        <LinearLayout
+            style="@style/matchnwrap"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/MazeikiaiArkosTelNr"
+                style="@style/InfoTelNr" />
+
+            <TextView
+                android:text="@string/MazeikiaiArkosAddres"
+                style="@style/InfoKontaktai" />
+        </LinearLayout>
+
+        <View
+            style="@style/InfoSeperator"/>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="104dp"
-            android:background="#ed5564"
-            android:scaleType="fitCenter"
-            android:src="@drawable/gsearch"
-            android:foreground="?attr/selectableItemBackground"/>
-    </FrameLayout>
-</LinearLayout>
-    </ScrollView>
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/telefono"
+                style="@style/InfoTelPic" />
+
+            <View
+                style="@style/InfoVerticalSkyriklis" />
+
+            <ImageView
+                android:id="@+id/adreso"
+                style="@style/InfoMapPic" />
+        </LinearLayout>
+
+        <View
+            style="@style/InfoSeperator" />
+
+        <RelativeLayout
+            style="@style/matchnwrap">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                style="@style/InfoImageSlider" />
+
+            <LinearLayout
+                android:id="@+id/SliderDots"
+                style="@style/ImageDots" />
+        </RelativeLayout>
+
+        <FrameLayout
+            style="@style/matchnwrap"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/google"
+                style="@style/InfoMoreButton"/>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

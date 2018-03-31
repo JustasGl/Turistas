@@ -5,9 +5,9 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
@@ -24,26 +24,27 @@ public class TauragesNakvynes extends AppCompatActivity {
     public static final String TAURAGĖS_VIEŠBUTIS = "Tauragės viešbutis";
     public static final String TOP_3_VIEŠBUČIŲ = "Top 3 Viešbučių";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(TauragesNakvynes.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -75,7 +76,7 @@ public class TauragesNakvynes extends AppCompatActivity {
         Taunakvynes.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(TauragesNakvynes.this, Taunakvynes);
-        ListView Listtranslated = (ListView)findViewById(R.id.list);
+        ListView Listtranslated = (ListView) findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -83,24 +84,24 @@ public class TauragesNakvynes extends AppCompatActivity {
 
                 word listas = Taunakvynes.get(position);
 
-                switch (position){
+                switch (position) {
                     case 1:
-                        skamb ();
+                        skamb();
                         Intent intent = new Intent(TauragesNakvynes.this, tauragesviesbutis.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        skamb ();
+                        skamb();
                         Intent intentas = new Intent(TauragesNakvynes.this, vytautobamso.class);
                         startActivity(intentas);
                         break;
                     case 3:
-                        skamb ();
+                        skamb();
                         Intent intentas1 = new Intent(TauragesNakvynes.this, globepark.class);
                         startActivity(intentas1);
                         break;
                     case 4:
-                        skamb ();
+                        skamb();
                         String daugiau = HTTPS_WWW_GOOGLE_LT_SEARCH_RLZ_1_C1_CHBF_EN_LT747_LT747_EI_NMZ8_WA_WDO8_TX6_AT0Q7ZG_BG_Q_NAKVYN_C4_97S_TAURAG_C4_97JE_OQ_NAKVYN_C4_97S_TAURAG_C4_97JE_GS_L_PSY_AB_3_0I22I30K1L2_11459_18466_0_18658_11_10_1_0_0_0_104_660_9J1_10_0_0_1_1_64_PSY_AB_0_11_661_0J35I39K1J0I30K1J0I8I13I30K1_0_7JU_APEW_I6_FY;
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                         startActivity(i);

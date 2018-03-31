@@ -5,9 +5,9 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
@@ -27,26 +27,27 @@ public class TelsiuNakvynes extends AppCompatActivity {
     public static final String DŽIUGO_KALNAS = " Džiugo Kalnas ";
     public static final String TOP_5_VIEŠBUČIŲ = "Top 5 Viešbučių";
     private MediaPlayer mMediaPlayer;
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
-    }
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
         }
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
     }
-    private void skamb ()
-    {
+
+    private void skamb() {
         mMediaPlayer = MediaPlayer.create(TelsiuNakvynes.this, R.raw.garsas);
         mMediaPlayer.start();
         mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -58,7 +59,7 @@ public class TelsiuNakvynes extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         Toolbar myChildToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -79,7 +80,7 @@ public class TelsiuNakvynes extends AppCompatActivity {
         Tnakvynes.add(new word(R.drawable.daugiaup, ""));
 
         Adaptoreditor adapteris = new Adaptoreditor(TelsiuNakvynes.this, Tnakvynes);
-        ListView Listtranslated = (ListView)findViewById(R.id.list);
+        ListView Listtranslated = (ListView) findViewById(R.id.list);
         Listtranslated.setAdapter(adapteris);
         Listtranslated.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -87,35 +88,35 @@ public class TelsiuNakvynes extends AppCompatActivity {
 
                 word listas = Tnakvynes.get(position);
 
-                switch (position){
+                switch (position) {
                     case 1:
-                        skamb ();
+                        skamb();
                         Intent intent = new Intent(TelsiuNakvynes.this, dziugokalnas.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        skamb ();
+                        skamb();
                         Intent intentas = new Intent(TelsiuNakvynes.this, meskosguolis.class);
                         startActivity(intentas);
                         break;
                     case 3:
-                        skamb ();
+                        skamb();
                         Intent intentas1 = new Intent(TelsiuNakvynes.this, viesbutistelsiai.class);
                         startActivity(intentas1);
                         break;
                     case 4:
-                        skamb ();
+                        skamb();
                         Intent intentas2 = new Intent(TelsiuNakvynes.this, passtefa.class);
                         startActivity(intentas2);
                         break;
                     case 5:
-                        skamb ();
+                        skamb();
                         Intent intentas3 = new Intent(TelsiuNakvynes.this, guesthouse.class);
-                        intentas3.putExtra(ARNAKVYNE,true);
+                        intentas3.putExtra(ARNAKVYNE, true);
                         startActivity(intentas3);
                         break;
                     case 6:
-                        skamb ();
+                        skamb();
                         String daugiau = HTTPS_WWW_GOOGLE_LT_SEARCH_RLZ_1_C1_CHBF_EN_LT747_LT747_EI_8SV8_WFMA_EO_XR6_ASD9_ZHICQ_Q_NAKVYN_C4_97S_TEL_C5_A1IUOSE_OQ_NAKVYN_C4_97S_TEL_C5_A1IUOSE_GS_L_PSY_AB_3_0I22I30K1L2_64094_65494_0_65614_9_9_0_0_0_0_73_520_8_8_0_0_1_1_64_PSY_AB_1_8_516_0_WKTL_TI4BMBK;
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(daugiau));
                         startActivity(i);
