@@ -64,7 +64,8 @@
         </LinearLayout>
 
         <View
-            style="@style/InfoSeperator" />
+            style="@style/InfoSeperator"
+            android:id="@+id/relative"/>
 
         <RelativeLayout
             style="@style/matchnwrap">
